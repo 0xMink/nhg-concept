@@ -1,8 +1,8 @@
 
 (function(){
   var root=document.documentElement;
-  var NAV={en:[["Employment","employment.html"],["Injury","injury.html"],["Results","results.html"],["Reviews","reviews.html"],["Attorneys","attorneys.html"],["Contact","contact.html"]],
-           es:[["Trabajo","employment.html"],["Lesiones","injury.html"],["Resultados","results.html"],["Opiniones","reviews.html"],["Abogados","attorneys.html"],["Contacto","contact.html"]]};
+  var NAV={en:[["Injury","injury.html"],["Employment","employment.html"],["Results","results.html"],["Reviews","reviews.html"],["Attorneys","attorneys.html"],["Contact","contact.html"]],
+           es:[["Lesiones","injury.html"],["Trabajo","employment.html"],["Resultados","results.html"],["Opiniones","reviews.html"],["Abogados","attorneys.html"],["Contacto","contact.html"]]};
   var ACT={en:["Call 516-228-5100","Text us"],es:["Llame al 516-228-5100","Envíenos un texto"]};
   function show(l){
     ['page','desk','mob'].forEach(function(k){
@@ -60,6 +60,10 @@
       document.getElementById('esyes').onclick=function(ev){ev.preventDefault(); setLang('es'); bar.style.display='none';};
       document.getElementById('esno').onclick=function(){ bar.style.display='none'; try{localStorage.setItem('nhg-lang','en')}catch(e){} }; }
   }
+  // mobile sticky bar: hidden while the hero's own buttons are on screen
+  (function(){ var cta=document.querySelector('#page-en .hero .cta'); if(!cta){ root.classList.add('no-hero'); return; }
+    if(!('IntersectionObserver' in window)){ root.classList.add('past-hero'); return; }
+    new IntersectionObserver(function(es){ es.forEach(function(e){ root.classList.toggle('past-hero', !e.isIntersecting && e.boundingClientRect.top<0); }); },{threshold:0}).observe(cta); })();
   var fit=function(){ var z=Math.min(1,window.innerWidth/1440); document.querySelectorAll('.desk').forEach(function(d){d.style.zoom=z}); };
   fit(); window.addEventListener('resize',fit);
 })();
