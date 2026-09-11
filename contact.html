@@ -2,181 +2,249 @@
 <html lang="en" data-lang="en" class="viewing">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
-<title>Contact — NHG Law Group concept</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<title>Contact — NHG Law Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-:root{--ink:#12143A;--band:#1b1d46;--slate:#3F4A5C;--paper:#FFFFFF;--stub:#EEF0F3;--hivis:#B84A22;--recovered:#1F7A4D;--ledger-result:#2FAF6E;}
-*{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:"Source Sans 3","Source Sans Pro","Segoe UI",Arial,sans-serif;font-size:18px;line-height:28px;-webkit-font-smoothing:antialiased}
-a{color:var(--ink);text-decoration:none} a:hover{text-decoration:underline;text-underline-offset:3px}
-.disp{font-family:"Bricolage Grotesque","Arial Narrow",Arial,sans-serif;font-weight:700;letter-spacing:0;text-wrap:pretty}
-.label{font-size:14px;line-height:20px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--slate)}
-.fig{font-family:"IBM Plex Mono","Courier New",monospace;font-weight:500;font-variant-numeric:tabular-nums}
-.btn{display:flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 22px;border-radius:6px;font-weight:600;font-size:18px;line-height:1;white-space:nowrap}
-.btn.primary{background:var(--hivis);color:var(--paper)} .btn.outline{border:2px solid var(--ink);color:var(--ink)} .btn.sm{height:48px;font-size:16px}
+:root{--ink:#12143A;--ink2:#1b1d46;--slate:#4A5163;--paper:#FFFFFF;--cream:#F4F1EA;--line:#DDD8CC;--line-d:rgba(255,255,255,.16);--act:#B84A22;--serif:"Source Serif 4","Georgia","Times New Roman",serif;--sans:"Source Sans 3","Segoe UI",Arial,sans-serif;--mono:"IBM Plex Mono","Courier New",monospace}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit;text-decoration:none} a:hover{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+img{display:block;max-width:100%}
+h1,h2,h3{margin:0;font-family:var(--serif);font-weight:500;letter-spacing:-0.015em;text-wrap:pretty;font-variation-settings:"opsz" 60}
+.eyebrow{font-family:var(--sans);font-size:13px;line-height:1.4;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--slate)}
+.dark .eyebrow{color:rgba(255,255,255,.62)}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.wrap{max-width:1320px;margin:0 auto;padding:0 40px}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px}
+.dark{background:var(--ink);color:var(--paper)}
+.cream{background:var(--cream)}
+.sec{padding:112px 0}
+.lead{font-family:var(--serif);font-size:24px;line-height:1.45;font-weight:400;color:var(--slate)}
+.dark .lead{color:rgba(255,255,255,.78)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 26px;border-radius:4px;font-weight:600;font-size:17px;line-height:1;white-space:nowrap;border:1.5px solid transparent;cursor:pointer;font-family:var(--sans)}
 .btn:hover{text-decoration:none}
-.slot{border:1px dashed var(--slate);border-radius:4px;padding:10px 12px;font-size:14px;line-height:20px;color:var(--slate)}
-.dark .slot{border-color:rgba(255,255,255,.4);color:rgba(255,255,255,.75)}
+.btn.act{background:var(--act);color:var(--paper);border-color:var(--act)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.dark .btn.ghost, .hero .btn.ghost{color:var(--paper);border-color:rgba(255,255,255,.7)}
+.btn.sm{height:44px;padding:0 18px;font-size:15px}
+.slot{border:1px dashed var(--slate);border-radius:3px;padding:8px 12px;font-size:13px;line-height:1.45;color:var(--slate)}
+.dark .slot{border-color:rgba(255,255,255,.35);color:rgba(255,255,255,.7)}
+:focus-visible{outline:2px solid var(--act);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--paper);color:var(--ink);padding:12px 16px;z-index:50;font-weight:600} .skip:focus{left:16px}
+/* header */
+header.top{position:absolute;inset:0 0 auto 0;z-index:10;color:var(--paper)}
+header.top.solid{position:static;color:var(--ink);border-bottom:1px solid var(--line);background:var(--paper)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:88px;gap:32px}
+header.top nav{display:flex;gap:28px;font-weight:500;font-size:16px}
+header.top .acts{display:flex;gap:18px;align-items:center;font-weight:600;font-size:16px}
+.wordmark{font-family:var(--serif);font-size:24px;font-weight:600;letter-spacing:-0.01em;white-space:nowrap}
+.pill{display:inline-flex;border:1px solid currentColor;border-radius:3px;overflow:hidden;font-size:13px;font-weight:600;letter-spacing:.06em;height:36px}
+.pill button{border:0;background:transparent;color:inherit;padding:0 12px;cursor:pointer;font:inherit;letter-spacing:inherit;height:100%}
+.pill .on{background:currentColor} .pill .on span{color:var(--ink)} header.top.solid .pill .on span{color:var(--paper)}
+.menu-btn{display:none;width:48px;height:48px;align-items:center;justify-content:center;border:0;background:transparent;color:inherit;cursor:pointer}
+/* hero */
+.hero{position:relative;min-height:96vh;display:flex;align-items:flex-end;color:var(--paper);overflow:hidden;background:var(--ink)}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,20,58,.38) 0%,rgba(18,20,58,.05) 28%,rgba(18,20,58,.2) 55%,rgba(18,20,58,.9) 100%),linear-gradient(90deg,rgba(18,20,58,.35) 0%,rgba(18,20,58,0) 55%)}
+.hero .wrap{position:relative;z-index:1;padding-bottom:64px;padding-top:280px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px;align-items:end}
+.hero h1{font-size:clamp(44px,5.2vw,72px);line-height:1.04;font-weight:500;letter-spacing:-0.02em;max-width:17ch}
+.hero .lead{color:rgba(255,255,255,.85);max-width:34ch;margin-top:24px}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.hero .facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:28px;font-size:15px;color:rgba(255,255,255,.8)}
+.hero .facts span{display:flex;gap:8px;align-items:center}
+.hero .aside{grid-column:9 / 13;align-self:end;border-left:1px solid rgba(255,255,255,.35);padding-left:24px;font-size:15px;line-height:1.5;color:rgba(255,255,255,.8)}
+.hero .aside b{display:block;color:var(--paper);font-family:var(--serif);font-weight:500;font-size:22px;margin-bottom:6px}
+/* situations: editorial list */
+.sit{border-top:1px solid var(--line)}
+.sit a{display:grid;grid-template-columns:64px 1fr auto;align-items:baseline;gap:24px;padding:26px 0;border-bottom:1px solid var(--line);color:var(--ink)}
+.sit a:hover{text-decoration:none} .sit a:hover .t{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
+.sit .n{font-family:var(--mono);font-size:14px;color:var(--slate)}
+.sit .t{font-family:var(--serif);font-size:34px;line-height:1.1;font-weight:500;letter-spacing:-0.01em}
+.sit .s{display:block;font-family:var(--sans);font-size:16px;color:var(--slate);margin-top:6px}
+.sit .arr{color:var(--slate)}
+/* ledger */
+.ledger{padding:120px 0}
+.ledger .row{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:40px;align-items:baseline;padding:24px 0;border-top:1px solid var(--line-d)}
+.ledger .row:last-of-type{border-bottom:1px solid var(--line-d)}
+.ledger .amt{font-family:var(--mono);font-weight:400;font-size:clamp(40px,4.4vw,64px);line-height:1;letter-spacing:-0.03em;color:var(--paper)}
+.ledger .d{font-family:var(--serif);font-size:22px;line-height:1.35;color:rgba(255,255,255,.85)}
+.ledger .head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:40px;flex-wrap:wrap}
+.ledger h2{font-size:clamp(36px,4vw,56px);line-height:1.05;max-width:16ch}
+/* photo band */
+.band{position:relative;min-height:70vh;display:flex;align-items:center;color:var(--paper);overflow:hidden;background:var(--ink)}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,20,58,.82) 0%,rgba(18,20,58,.55) 45%,rgba(18,20,58,.1) 100%)}
+.band .wrap{position:relative;z-index:1;padding-top:96px;padding-bottom:96px}
+.band blockquote{margin:0;font-family:var(--serif);font-size:clamp(30px,3.6vw,52px);line-height:1.15;font-weight:500;letter-spacing:-0.015em;max-width:22ch}
+.band .attr{margin-top:28px;font-size:15px;color:rgba(255,255,255,.75)}
+/* team */
+.team{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px}
+.portrait{position:relative;aspect-ratio:4/5;background:var(--ink);overflow:hidden;border-radius:2px}
+.portrait img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);transform:scale(1.4);transform-origin:50% 40%}
+.portrait::before{content:"";position:absolute;inset:0;background:var(--ink);mix-blend-mode:lighten;z-index:1}
+.portrait::after{content:"";position:absolute;inset:0;background:var(--cream);mix-blend-mode:multiply;z-index:2}
+.portrait.empty{display:flex;align-items:center;justify-content:center;border:1px dashed var(--line);background:var(--cream);color:var(--slate);font-size:13px;text-align:center}
+.portrait.empty::before,.portrait.empty::after{display:none}
+.team .name{font-family:var(--serif);font-size:20px;font-weight:500;margin-top:14px;line-height:1.2}
+.team .role{font-size:14px;color:var(--slate);margin-top:4px}
+/* proof */
+.proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.proof h3{font-size:22px;font-weight:500;margin-bottom:8px}
+.proof p{margin:0;color:var(--slate);font-size:17px}
+.proof .k{font-family:var(--mono);font-size:13px;color:var(--act);margin-bottom:14px}
+/* quote */
+.quote{font-family:var(--serif);font-size:clamp(28px,3vw,42px);line-height:1.2;font-weight:400;font-style:italic;max-width:26ch;color:var(--ink)}
+/* intake */
+.intake .field{display:flex;flex-direction:column;gap:8px}
+.intake label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--slate)}
+.intake .input{width:100%;border:0;border-bottom:1.5px solid var(--ink);background:transparent;padding:12px 0;font:inherit;font-size:20px;color:var(--ink);border-radius:0}
+.intake .input::placeholder{color:#9A9FAD}
+.intake textarea.input{min-height:120px;resize:vertical}
+.intake .row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.intake .langsel{display:inline-flex;border:1.5px solid var(--ink);border-radius:4px;overflow:hidden}
+.intake .langsel button{border:0;background:transparent;color:var(--ink);padding:0 16px;height:44px;font:inherit;font-weight:600;cursor:pointer}
+.intake .langsel button.on{background:var(--ink);color:var(--paper)}
+.sent{margin-top:16px;padding:12px 14px;border-left:3px solid var(--act);background:var(--cream);font-size:15px}
+/* footer */
+footer{padding:80px 0 48px}
+footer .links a{display:block;padding:6px 0;color:rgba(255,255,255,.85)}
+footer .draftline{font-size:13px;color:rgba(255,255,255,.55);margin-top:12px}
+/* inner pages */
+.pagehero{padding:72px 0 56px;border-bottom:1px solid var(--line)}
+.pagehero h1{font-size:clamp(44px,5.5vw,76px);line-height:1.02;letter-spacing:-0.02em;max-width:14ch}
+.pagehero .lead{margin-top:20px;max-width:46ch}
+.pagehero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.pagehero .photo{aspect-ratio:4/3;overflow:hidden;border-radius:2px;background:var(--ink)}
+.pagehero .photo img{width:100%;height:100%;object-fit:cover}
+.check{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line);font-size:19px}
+.check .n{font-family:var(--mono);font-size:13px;color:var(--act);padding-top:6px;width:28px;flex:none}
+details.faq{border-bottom:1px solid var(--line)} details.faq summary{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;cursor:pointer;list-style:none;font-family:var(--serif);font-size:24px;font-weight:500;line-height:1.2} details.faq summary::-webkit-details-marker{display:none} details.faq[open] summary svg{transform:rotate(180deg)} details.faq .ans{padding:0 0 24px;color:var(--slate);max-width:60ch}
+.chips{display:flex;gap:10px;flex-wrap:wrap} .chip{height:44px;padding:0 18px;border:1.5px solid var(--ink);border-radius:4px;background:transparent;font:inherit;font-weight:600;font-size:15px;cursor:pointer;color:var(--ink)} .chip.on{background:var(--ink);color:var(--paper)}
+.dark .chip{border-color:rgba(255,255,255,.6);color:var(--paper)} .dark .chip.on{background:var(--paper);color:var(--ink)}
 .row.hid{display:none !important}
-.pill{display:flex;height:48px;border-radius:6px;border:2px solid var(--ink);overflow:hidden;font-weight:600;font-size:16px}
-.pill span,.pill button{display:flex;align-items:center;padding:0 14px;cursor:pointer;border:0;background:transparent;font:inherit;color:var(--ink);height:100%} .pill .on{background:var(--hivis);color:var(--paper)}
-:focus-visible{outline:3px solid var(--hivis);outline-offset:2px}
-.chip{display:flex;align-items:center;height:48px;padding:0 16px;border-radius:6px;border:2px solid var(--ink);font-weight:600;font-size:16px;cursor:pointer;background:transparent;font-family:inherit}
-.chip.on{background:var(--ink);color:var(--paper)}
-.field{display:flex;flex-direction:column;gap:6px}
-.input{height:56px;border:1px solid var(--slate);border-radius:4px;background:var(--paper);padding:0 14px;display:flex;align-items:center;color:var(--ink);font-size:18px;font-family:inherit;width:100%}
-.input::placeholder{color:var(--slate)}
-.textarea{height:120px;padding-top:12px;resize:vertical}
-.icon{flex:none}
-.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
-.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
-.dark{background:var(--ink);color:var(--paper)} .dark a{color:var(--paper)}
-footer .links a{display:flex;align-items:center;min-height:44px}
-.skip{position:absolute;left:-9999px;top:8px;background:var(--paper);color:var(--ink);padding:12px 16px;border-radius:4px;z-index:50;font-weight:600} .skip:focus{left:16px}
-.band{background:var(--stub)}
-.sec{padding:72px 0}
-.h1{font-size:56px;line-height:60px;font-weight:700;letter-spacing:0}
-.h2{font-size:40px;line-height:44px}
-.lead{font-size:22px;line-height:32px;color:var(--slate)}
-.card{background:var(--paper);border:1px solid #dfe3e8;border-radius:4px}
-.tile{display:flex;gap:14px;align-items:flex-start;padding:18px;min-height:96px}
-.tile .t{font-weight:600;font-size:19px;line-height:26px} .tile .s{font-size:15px;line-height:21px;color:var(--slate)}
-.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px} .tiles-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-.row{display:flex;gap:32px;align-items:baseline;padding:20px 32px}
-.row .amt{width:240px;flex:none;text-align:right;font-size:40px;line-height:48px;color:var(--paper)}
-.row .d{font-size:20px;line-height:30px}
-.person{display:flex;gap:14px;align-items:center;padding:16px;background:var(--stub);border-radius:4px}
-.person img,.person .ph{width:64px;height:64px;border-radius:999px;object-fit:cover;flex:none}
-.person .ph{border:1px dashed var(--slate);display:flex;align-items:center;justify-content:center;font-size:11px;line-height:14px;color:var(--slate);text-align:center}
-details.faq{border-bottom:1px solid #dfe3e8} details.faq summary{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px;font-weight:600;padding:8px 0;cursor:pointer;list-style:none} details.faq summary::-webkit-details-marker{display:none} details.faq[open] summary svg{transform:rotate(180deg)} details.faq .ans{padding:0 0 16px}
-.check{display:flex;gap:12px;align-items:flex-start}
-.check .box{width:28px;height:28px;border:2px solid var(--ink);border-radius:4px;display:flex;align-items:center;justify-content:center;flex:none;margin-top:2px}
-header.top{border-bottom:1px solid var(--stub);background:var(--paper)}
-header.top .wrap{display:flex;align-items:center;justify-content:space-between;min-height:96px;gap:24px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
-header.top nav{display:flex;gap:20px;flex:1;justify-content:center;font-weight:600;flex-wrap:wrap}
-header.top .acts{display:flex;gap:12px;align-items:center;flex:none}
-.wordmark{font-size:26px;line-height:32px;font-weight:700;letter-spacing:-0.01em;white-space:nowrap}
-.menu-btn{display:none;width:48px;height:48px;align-items:center;justify-content:center;border:0;background:transparent;cursor:pointer}
-.sticky{display:none}
-.tag{position:fixed;left:16px;bottom:16px;background:#111827;color:#fff;font:600 13px/18px "Source Sans 3",Arial,sans-serif;padding:8px 12px;border-radius:999px;opacity:.85;z-index:9}
-.hide-m{display:block}
-html.viewing .reviews-grid .people{display:none} html.viewing .reviews-grid .slot{display:block !important}
+.bio{display:grid;grid-template-columns:200px 1fr;gap:32px;padding:40px 0;border-top:1px solid var(--line);align-items:start}
+.bio .name{font-family:var(--serif);font-size:30px;font-weight:500;line-height:1.1}
+.bio .role{color:var(--slate);margin-top:6px}
+.bio p{margin:14px 0 0;max-width:60ch}
+.office{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px;align-items:start}
+.map{aspect-ratio:16/10;background:var(--ink);overflow:hidden;border-radius:2px} .map img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1);opacity:.9}
+/* viewing mode */
 html.viewing .slot, html.viewing .tag, html.viewing .reviews-sec, html.viewing .slot-row{display:none !important}
-.draftline{font-size:14px;line-height:20px;color:rgba(255,255,255,.7);margin-top:8px}
-@media (max-width:899px){
-  body{font-size:18px}
-  .wrap{padding:0 20px}
-  .grid{display:flex;flex-direction:column;gap:24px}
-  .sec{padding:36px 0}
-  .h1{font-size:36px;line-height:40px} .h2{font-size:28px;line-height:32px} .lead{font-size:20px;line-height:30px}
-  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .tiles{grid-template-columns:1fr;gap:8px} .tile{flex-direction:row;align-items:center;gap:14px;min-height:72px;padding:14px 16px} .tile .t{font-size:18px;line-height:24px} .tile .s{font-size:14px;line-height:20px}
-  .people .card:nth-child(n+3){display:none}
-  .row{flex-direction:column;gap:4px;padding:20px} .row .amt{width:auto;text-align:left;font-size:32px;line-height:36px} .row .d{font-size:18px;line-height:28px}
-  .tiles .tile:nth-child(9){grid-column:auto}
-  .why-h{font-size:36px !important;line-height:40px !important}
-  .people{display:flex;flex-direction:column;gap:10px}
-  header.top .wrap{height:72px;gap:12px} header.top nav{display:none} header.top .acts .btn, header.top .acts .call{display:none !important}
-  header.top .wordmark{font-size:20px;line-height:24px;flex:1;text-align:center}
-  .menu-btn{display:flex}
-  .sticky{display:flex;position:fixed;left:0;right:0;bottom:0;width:100%;z-index:5;gap:8px;padding:12px 12px 24px;background:var(--paper);border-top:1px solid var(--stub)}
-  .sticky .btn{min-width:0;padding:0 12px;font-size:15px;gap:8px;flex:1} .sticky .btn.primary{flex:1.7}
-  body{padding-bottom:96px}
-  .hide-m{display:none}
-  .tag{bottom:100px;right:12px;left:auto;font-size:12px;padding:6px 10px}
-}
-@media (min-width:900px){ .people{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px} .form-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px} }
-@media (min-width:900px) and (max-width:1199px){
-  .h1{font-size:44px;line-height:48px} .h2{font-size:32px;line-height:36px} .lead{font-size:20px;line-height:30px}
-  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))} .tiles-2{grid-template-columns:1fr}
-  .tile{flex-direction:row;align-items:center;min-height:72px;padding:14px 16px}
-  .row{gap:20px;padding:16px 20px} .row .amt{width:180px;font-size:30px;line-height:36px} .row .d{font-size:18px;line-height:28px}
-  .why-h{font-size:40px !important;line-height:44px !important}
-  header.top .acts .call{display:none}
-  header.top nav{display:none} header.top .menu-btn{display:flex}
-  .grid{gap:20px}
-}
-#esbar{display:none;position:static;z-index:20;background:#111827;color:#fff;font:16px/24px "Source Sans 3",Arial,sans-serif;padding:12px 20px;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap}
+html.viewing .reviews-grid .people{display:none} html.viewing .reviews-grid .slot{display:block !important}
+.tag{position:fixed;left:16px;bottom:16px;background:var(--ink);color:#fff;font:600 12px/1.4 var(--sans);padding:8px 12px;border-radius:3px;opacity:.85;z-index:9}
+/* sticky bar + sheet + esbar */
+.sticky{display:none}
+#esbar{display:none;position:static;z-index:20;background:var(--ink);color:#fff;font:16px/1.5 var(--sans);padding:12px 20px;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap}
 #esbar a{color:#fff;font-weight:600;text-decoration:underline;text-underline-offset:3px}
 #esbar button{background:transparent;border:0;color:#fff;font-size:24px;line-height:1;cursor:pointer;width:48px;height:48px}
-#sheet{display:none;position:fixed;inset:0;z-index:30;background:#fff;flex-direction:column;padding:20px}
+#sheet{display:none;position:fixed;inset:0;z-index:30;background:var(--ink);color:var(--paper);flex-direction:column;padding:20px 24px}
 #sheet.open{display:flex}
 #sheet .topbar{display:flex;justify-content:space-between;align-items:center;height:48px}
-#sheet .close{width:48px;height:48px;display:flex;align-items:center;justify-content:center;border:0;background:transparent;cursor:pointer}
-#sheet nav{display:flex;flex-direction:column;gap:4px;margin-top:24px;flex:1}
-#sheet nav a{font:700 32px/56px "Bricolage Grotesque","Arial Narrow",Arial,sans-serif;color:#111827;text-decoration:none;border-bottom:1px solid #EEF0F3}
+#sheet .close{width:48px;height:48px;display:flex;align-items:center;justify-content:center;border:0;background:transparent;cursor:pointer;color:var(--paper)}
+#sheet nav{display:flex;flex-direction:column;margin-top:32px;flex:1}
+#sheet nav a{font-family:var(--serif);font-size:36px;line-height:1.1;padding:14px 0;border-bottom:1px solid var(--line-d);color:var(--paper);text-decoration:none}
 #sheet .acts{display:flex;flex-direction:column;gap:12px;padding-bottom:12px}
+#sheet .acts .btn.outline{border:1.5px solid rgba(255,255,255,.7);color:var(--paper);background:transparent}
+#sheet .acts .btn.primary{background:var(--act);color:var(--paper)}
+@media (max-width:1199px){
+  .wrap{padding:0 28px} .grid{gap:24px}
+  header.top nav{display:none} .menu-btn{display:flex} header.top .acts .call{display:none}
+  .team{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .proof{grid-template-columns:1fr;gap:28px}
+  .sec{padding:80px 0}
+}
+@media (max-width:899px){
+  body{padding-bottom:92px}
+  .wrap{padding:0 20px}
+  .grid{display:flex;flex-direction:column;gap:24px}
+  .sec{padding:64px 0} .ledger{padding:80px 0}
+  header.top .wrap{height:72px} header.top .acts .btn{display:none}
+  .hero{min-height:88vh} .hero .wrap{padding-top:120px;padding-bottom:40px;display:flex;flex-direction:column}
+  .hero h1{font-size:44px;max-width:none} .hero .aside{display:none} .hero .cta .btn{flex:1;min-width:0}
+  .hero .facts{gap:10px;flex-direction:column}
+  .sit a{grid-template-columns:40px 1fr auto;gap:12px;padding:20px 0} .sit .t{font-size:24px} .sit .s{font-size:15px}
+  .ledger .row{grid-template-columns:1fr;gap:6px;padding:22px 0} .ledger .amt{font-size:40px} .ledger .d{font-size:18px}
+  .band{min-height:auto} .band .wrap{padding-top:72px;padding-bottom:72px} .band blockquote{font-size:30px}
+  .team{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px} .team .name{font-size:18px}
+  .intake .row2{grid-template-columns:1fr;gap:20px}
+  .pagehero{padding:48px 0 40px} .pagehero h1{font-size:40px} .bio{grid-template-columns:1fr;gap:16px;padding:28px 0} .bio .name{font-size:26px}
+  details.faq summary{font-size:20px;padding:18px 0}
+  .lead{font-size:20px}
+  .sticky{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:5;gap:10px;padding:12px 16px 22px;background:var(--paper);border-top:1px solid var(--line)}
+  .sticky .btn{flex:1;min-width:0;padding:0 12px;font-size:15px} .sticky .btn.act{flex:1.6}
+  .tag{bottom:100px;right:12px;left:auto}
+}
 </style>
 </head>
 <body>
 <div id="esbar"><span>¿Prefiere español?</span> <a href="#" id="esyes">Ver en español</a> <button id="esno" aria-label="Cerrar">×</button></div>
-<div id="page-en" lang="en"><header class="top"><div class="wrap">
-  <div class="pill" style="flex:none" role="group" aria-label="Language"><button class="on" aria-pressed="true" lang="en">EN</button><button aria-pressed="false" lang="es">ES</button></div>
-  <a class="disp wordmark" href="index.html">NHG Law Group</a>
+<div id="page-en" lang="en"><header class="top solid"><div class="wrap">
+  <a class="wordmark" href="index.html">NHG Law Group</a>
   <nav><a href="employment.html">Employment</a><a href="injury.html">Injury</a><a href="results.html">Results</a><a href="reviews.html">Reviews</a><a href="attorneys.html">Attorneys</a><a href="contact.html">Contact</a></nav>
   <div class="acts">
-    <a class="btn outline sm" href="contact.html#text"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M4 5h16v11H9l-5 4z"/></svg>Text us</a>
-    <a class="call" href="tel:+15162285100" style="display:flex;align-items:center;gap:8px;font-weight:600;white-space:nowrap"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>516-228-5100</a>
+    <div class="pill" role="group" aria-label="Language"><button class="on" aria-pressed="true" lang="en"><span>EN</span></button><button aria-pressed="false" lang="es"><span>ES</span></button></div>
+    <a class="call" href="tel:+15162285100">516-228-5100</a>
+    <a class="btn act sm" href="contact.html#intake">Free case review</a>
     <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="sheet"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </div>
-</div></header><a class="skip" href="#main">Skip to content</a><main id="main">
-<section class="band sec"><div class="wrap" style="display:flex;flex-direction:column;gap:16px"><div class="label">Contact</div><h1 class="disp h1" style="margin:0">Talk to us.</h1><div class="lead"><span lang="es">Se habla español.</span> Free case review. <span class="slot" style="display:inline-block;padding:2px 8px;font-size:14px">fee wording per firm approval</span></div></div></section>
-<section class="sec" style="padding-top:0;margin-top:-24px"><div class="wrap grid" style="align-items:start">
-  <div class="card" style="grid-column:span 7;padding:24px;display:flex;flex-direction:column;gap:14px"><div class="label">Massapequa office</div><div style="font-size:22px;line-height:32px">4242 Merrick Road<br>Massapequa, New York 11758</div><div class="slot">Hours: firm to supply</div><div style="height:180px;border-radius:4px;background:repeating-linear-gradient(135deg,#d9dde3 0 6px,#e8ebef 6px 12px);display:flex;align-items:center;justify-content:center;color:var(--slate);font-size:14px">Static map image that opens directions. No embedded map script.</div><div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn primary sm" href="tel:+15162285100"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Call 516-228-5100</a><a class="btn outline sm" href="https://www.google.com/maps/search/?api=1&amp;query=4242+Merrick+Road+Massapequa+NY+11758" target="_blank" rel="noopener"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg>Directions</a></div></div>
-  <div style="grid-column:span 5;display:flex;flex-direction:column;gap:16px"><div class="card" id="text" style="padding:24px;display:flex;flex-direction:column;gap:12px"><div class="label">Text us</div><div>Send a text and we'll reply during business hours.</div><a class="btn outline sm" href="#intake"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M4 5h16v11H9l-5 4z"/></svg>Text us</a><div class="slot">Text number renders only once the firm confirms it is for public intake and monitored</div></div><div class="card" style="padding:24px;display:flex;flex-direction:column;gap:8px"><div class="label">Other offices</div><div class="slot">Additional offices appear only when the firm confirms an address</div></div></div>
+</div></header><a class="skip" href="#main">Skip to content</a><main id="main"><section class="pagehero"><div class="wrap grid" style="align-items:center">
+  <div style="grid-column:span 7"><div class="eyebrow">Contact</div><h1 style="margin-top:16px">Talk to us.</h1><p class="lead">Se habla español. Free case review.</p><div class="cta"><a class="btn act" href="tel:+15162285100"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Call 516-228-5100</a><a class="btn ghost" href="contact.html#text"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M4 5h16v11H9l-5 4z"/></svg>Text us</a></div></div>
+  
 </div></section>
-<section class="sec" id="intake"><div class="wrap grid">
-  <div style="grid-column:span 5;display:flex;flex-direction:column;gap:16px"><h2 class="disp h2" style="margin:0">Send us a message.</h2><div class="lead" style="font-size:20px;line-height:30px">A few words is enough. Someone from this office will call you back.</div><div class="hide-m" style="display:flex;flex-direction:column;gap:10px;margin-top:8px;font-weight:600"><a href="tel:+15162285100" style="display:flex;align-items:center;gap:8px"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Rather talk? Call 516-228-5100</a><a href="contact.html#text" style="display:flex;align-items:center;gap:8px"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M4 5h16v11H9l-5 4z"/></svg>Or text us</a></div></div>
-  <div class="band" style="grid-column:span 7;border-radius:4px;padding:32px 24px;display:flex;flex-direction:column;gap:16px">
-    <div class="form-2" style="display:flex;flex-direction:column;gap:16px"><div class="field"><label class="label" for="f-name">Name</label><input class="input" id="f-name" name="name" autocomplete="name"></div><div class="field"><label class="label" for="f-phone">Phone</label><input class="input" id="f-phone" name="phone" type="tel" autocomplete="tel"></div></div>
-    <div class="field"><label class="label" for="f-msg">What happened</label><textarea class="input textarea" id="f-msg" name="message" placeholder="A few words is fine"></textarea></div>
-    <div class="field"><label class="label" for="f-email">Email (optional)</label><input class="input" id="f-email" name="email" type="email" autocomplete="email"></div>
-    <div style="display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap"><div class="field"><div class="label" id="f-lang-l">Preferred language</div><div class="pill formpill" role="group" aria-labelledby="f-lang-l" style="border-color:var(--slate)"><button type="button" class="on" aria-pressed="true" style="background:var(--ink);color:var(--paper)">English</button><button type="button" aria-pressed="false">Español</button></div></div><button class="btn primary send" type="button" style="width:220px;max-width:100%;border:0;font-family:inherit;cursor:pointer">Send message</button></div>
-    <div class="sent" hidden role="status" style="padding:14px 16px;border-radius:4px;background:var(--paper);border:1px solid var(--recovered);color:var(--ink)">Demo only. Nothing was sent. On the real site you would see a confirmation with a reference number once the firm has your message.</div>
+<section class="sec"><div class="wrap office">
+  <div style="grid-column:span 5"><div class="eyebrow">Massapequa office</div><div style="font-family:var(--serif);font-size:30px;line-height:1.2;margin-top:14px">4242 Merrick Road<br>Massapequa, New York 11758</div><div class="slot" style="margin-top:16px;display:inline-block">Hours: firm to supply</div><div style="margin-top:24px;display:flex;gap:14px;flex-wrap:wrap"><a class="btn act" href="tel:+15162285100"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Call 516-228-5100</a><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=4242+Merrick+Road+Massapequa+NY+11758" target="_blank" rel="noopener"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg>Directions</a></div>
+    <div id="text" style="margin-top:48px;border-top:1px solid var(--line);padding-top:24px"><div class="eyebrow">Text us</div><p style="margin:12px 0 0">Send a text and we'll reply during business hours.</p><a class="btn ghost" href="#intake" style="margin-top:16px"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M4 5h16v11H9l-5 4z"/></svg>Text us</a><div class="slot" style="margin-top:14px;display:inline-block">Text number renders only once the firm confirms it is for public intake and monitored</div></div>
+    <div style="margin-top:32px" class="slot">Additional offices appear only when the firm confirms an address</div></div>
+  <div style="grid-column:7 / 13"><div class="map"><img src="img/office.jpg" alt=""></div><div style="font-size:14px;color:var(--slate);margin-top:10px">Static map or office photograph that opens directions. No embedded map script.</div></div>
+</div></section>
+<section class="sec intake" id="intake"><div class="wrap grid" style="align-items:start">
+  <div style="grid-column:span 5"><div class="eyebrow">Free case review</div><h2 style="font-size:clamp(36px,4vw,56px);line-height:1.05;margin-top:16px">Send us a message.</h2><p class="lead" style="margin-top:20px">A few words is enough. Someone from this office will call you back.</p><div style="margin-top:28px;display:flex;flex-direction:column;gap:12px;font-weight:600"><a href="tel:+15162285100" style="display:flex;align-items:center;gap:10px"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Rather talk? Call 516-228-5100</a><a href="contact.html#text" style="display:flex;align-items:center;gap:10px"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M4 5h16v11H9l-5 4z"/></svg>Or text us</a></div></div>
+  <div style="grid-column:7 / 13;display:flex;flex-direction:column;gap:28px">
+    <div class="row2"><div class="field"><label for="f-name">Name</label><input class="input" id="f-name" name="name" autocomplete="name"></div><div class="field"><label for="f-phone">Phone</label><input class="input" id="f-phone" name="phone" type="tel" autocomplete="tel"></div></div>
+    <div class="field"><label for="f-msg">What happened</label><textarea class="input" id="f-msg" name="message" placeholder="A few words is fine"></textarea></div>
+    <div class="row2"><div class="field"><label for="f-email">Email (optional)</label><input class="input" id="f-email" name="email" type="email" autocomplete="email"></div><div class="field"><div class="eyebrow" id="f-lang-l" style="font-size:13px">Preferred language</div><div class="langsel formpill" role="group" aria-labelledby="f-lang-l"><button type="button" class="on" aria-pressed="true">English</button><button type="button" aria-pressed="false">Español</button></div></div></div>
+    <div><button class="btn act send" type="button">Send message</button><div class="sent" hidden role="status">Demo only. Nothing was sent. On the real site you would see a confirmation with a reference number once the firm has your message.</div></div>
   </div>
-</div></section><div class="sticky">
-  <a class="btn primary" href="tel:+15162285100"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Call 516-228-5100</a>
-  <a class="btn outline" href="contact.html#text"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M4 5h16v11H9l-5 4z"/></svg>Text us</a>
-</div></main><footer class="dark" style="padding:56px 0 40px"><div class="wrap grid" style="align-items:start">
-  <div style="grid-column:span 4;display:flex;flex-direction:column;gap:10px"><div class="disp" style="font-size:22px">NHG Law Group, P.C.</div><div class="label" style="color:rgba(255,255,255,.7)">Massapequa office</div><div>4242 Merrick Road<br>Massapequa, New York 11758</div><div style="display:flex;gap:10px;margin-top:6px;flex-wrap:wrap"><a class="btn outline sm" style="border-color:var(--paper);color:var(--paper)" href="tel:+15162285100"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>516-228-5100</a><a class="btn outline sm" style="border-color:var(--paper);color:var(--paper)" href="https://www.google.com/maps/search/?api=1&amp;query=4242+Merrick+Road+Massapequa+NY+11758" target="_blank" rel="noopener"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg>Directions</a></div><div class="slot" style="margin-top:6px">Hours: firm to supply. Text line: shown once confirmed</div></div>
-  <div class="links" style="grid-column:span 2;display:flex;flex-direction:column;gap:0"><a href="employment.html">Employment</a><a href="injury.html">Injury</a><a href="results.html">Results</a><a href="reviews.html">Reviews</a><a href="attorneys.html">Attorneys</a><a href="contact.html">Contact</a></div>
-  <div class="links" style="grid-column:span 2;display:flex;flex-direction:column;gap:0"><a href="contact.html#intake">Send a message</a><a href="accessibility.html">Accessibility statement</a><a href="privacy.html">Privacy</a><div lang="es" style="font-weight:600;margin-top:8px">Se habla español</div></div>
-  <div style="grid-column:span 4;display:flex;flex-direction:column;gap:12px"><div class="slot">Social links: only destinations the firm confirms before launch</div><div class="slot">Advertising label slot: contents per attorney review</div><div style="font-size:14px;color:rgba(255,255,255,.6)">© 2026 The NHG Law Group, P.C.</div><div class="draftline">Draft for the firm's review. Copy, results wording and client reviews are subject to the firm's approval.</div></div>
+</div></section><div class="sticky"><a class="btn act" href="tel:+15162285100"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Call 516-228-5100</a><a class="btn ghost" href="contact.html#text"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M4 5h16v11H9l-5 4z"/></svg>Text us</a></div></main><footer class="dark"><div class="wrap grid" style="align-items:start">
+  <div style="grid-column:span 5"><div class="wordmark" style="font-size:28px">NHG Law Group, P.C.</div><div style="margin-top:20px;color:rgba(255,255,255,.85)">4242 Merrick Road<br>Massapequa, New York 11758</div><div style="margin-top:14px;display:flex;gap:18px;flex-wrap:wrap;font-weight:600"><a href="tel:+15162285100">516-228-5100</a><a href="https://www.google.com/maps/search/?api=1&amp;query=4242+Merrick+Road+Massapequa+NY+11758" target="_blank" rel="noopener">Directions</a></div><div class="slot" style="margin-top:14px;max-width:360px">Hours: firm to supply. Text line: shown once confirmed</div></div>
+  <div class="links" style="grid-column:span 2"><a href="employment.html">Employment</a><a href="injury.html">Injury</a><a href="results.html">Results</a><a href="reviews.html">Reviews</a><a href="attorneys.html">Attorneys</a><a href="contact.html">Contact</a></div>
+  <div class="links" style="grid-column:span 2"><a href="contact.html#intake">Send a message</a><a href="accessibility.html">Accessibility statement</a><a href="privacy.html">Privacy</a><div lang="es" style="margin-top:10px;font-weight:600">Se habla español</div></div>
+  <div style="grid-column:span 3;display:flex;flex-direction:column;gap:10px"><div class="slot">Social links: only destinations the firm confirms before launch</div><div class="slot">Advertising label slot: contents per attorney review</div><div style="font-size:13px;color:rgba(255,255,255,.55);margin-top:8px">© 2026 The NHG Law Group, P.C.</div><div class="draftline">Draft for the firm's review. Copy, results wording and client reviews are subject to the firm's approval.</div></div>
 </div></footer></div>
-<div id="page-es" lang="es" style="display:none"><header class="top"><div class="wrap">
-  <div class="pill" style="flex:none" role="group" aria-label="Language"><button class="on" aria-pressed="true" lang="en">EN</button><button aria-pressed="false" lang="es">ES</button></div>
-  <a class="disp wordmark" href="index.html">NHG Law Group</a>
+<div id="page-es" lang="es" style="display:none"><header class="top solid"><div class="wrap">
+  <a class="wordmark" href="index.html">NHG Law Group</a>
   <nav><a href="employment.html">Trabajo</a><a href="injury.html">Lesiones</a><a href="results.html">Resultados</a><a href="reviews.html">Opiniones</a><a href="attorneys.html">Abogados</a><a href="contact.html">Contacto</a></nav>
   <div class="acts">
-    <a class="btn outline sm" href="contact.html#text-es"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M4 5h16v11H9l-5 4z"/></svg>Envíenos un texto</a>
-    <a class="call" href="tel:+15162285100" style="display:flex;align-items:center;gap:8px;font-weight:600;white-space:nowrap"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>516-228-5100</a>
+    <div class="pill" role="group" aria-label="Language"><button class="on" aria-pressed="true" lang="en"><span>EN</span></button><button aria-pressed="false" lang="es"><span>ES</span></button></div>
+    <a class="call" href="tel:+15162285100">516-228-5100</a>
+    <a class="btn act sm" href="contact.html#intake-es">Revisión gratis de su caso</a>
     <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="sheet"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </div>
-</div></header><a class="skip" href="#main-es">Skip to content</a><main id="main-es">
-<section class="band sec"><div class="wrap" style="display:flex;flex-direction:column;gap:16px"><div class="label">Contacto</div><h1 class="disp h1" style="margin:0">Hable con nosotros.</h1><div class="lead"><span lang="es">También atendemos en inglés.</span> Revisión gratis de su caso. <span class="slot" style="display:inline-block;padding:2px 8px;font-size:14px">texto sobre honorarios según aprobación de la firma</span></div></div></section>
-<section class="sec" style="padding-top:0;margin-top:-24px"><div class="wrap grid" style="align-items:start">
-  <div class="card" style="grid-column:span 7;padding:24px;display:flex;flex-direction:column;gap:14px"><div class="label">Oficina de Massapequa</div><div style="font-size:22px;line-height:32px">4242 Merrick Road<br>Massapequa, New York 11758</div><div class="slot">Horario: la firma debe indicarlo</div><div style="height:180px;border-radius:4px;background:repeating-linear-gradient(135deg,#d9dde3 0 6px,#e8ebef 6px 12px);display:flex;align-items:center;justify-content:center;color:var(--slate);font-size:14px">Imagen fija del mapa que abre las indicaciones. Sin mapa incrustado.</div><div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn primary sm" href="tel:+15162285100"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Llame al 516-228-5100</a><a class="btn outline sm" href="https://www.google.com/maps/search/?api=1&amp;query=4242+Merrick+Road+Massapequa+NY+11758" target="_blank" rel="noopener"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg>Cómo llegar</a></div></div>
-  <div style="grid-column:span 5;display:flex;flex-direction:column;gap:16px"><div class="card" id="text-es" style="padding:24px;display:flex;flex-direction:column;gap:12px"><div class="label">Envíenos un texto</div><div>Envíe un texto y le respondemos en horario de oficina.</div><a class="btn outline sm" href="#intake-es"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M4 5h16v11H9l-5 4z"/></svg>Envíenos un texto</a><div class="slot">El número de texto se muestra solo cuando la firma confirme que es para el público y que alguien lo atiende</div></div><div class="card" style="padding:24px;display:flex;flex-direction:column;gap:8px"><div class="label">Otras oficinas</div><div class="slot">Otras oficinas aparecen solo cuando la firma confirme una dirección</div></div></div>
+</div></header><a class="skip" href="#main-es">Ir al contenido</a><main id="main-es"><section class="pagehero"><div class="wrap grid" style="align-items:center">
+  <div style="grid-column:span 7"><div class="eyebrow">Contacto</div><h1 style="margin-top:16px">Hable con nosotros.</h1><p class="lead">También atendemos en inglés. Revisión gratis de su caso.</p><div class="cta"><a class="btn act" href="tel:+15162285100"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Llame al 516-228-5100</a><a class="btn ghost" href="contact.html#text-es"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M4 5h16v11H9l-5 4z"/></svg>Envíenos un texto</a></div></div>
+  
 </div></section>
-<section class="sec" id="intake-es"><div class="wrap grid">
-  <div style="grid-column:span 5;display:flex;flex-direction:column;gap:16px"><h2 class="disp h2" style="margin:0">Envíenos un mensaje.</h2><div class="lead" style="font-size:20px;line-height:30px">Con pocas palabras basta. Alguien de esta oficina le devuelve la llamada.</div><div class="hide-m" style="display:flex;flex-direction:column;gap:10px;margin-top:8px;font-weight:600"><a href="tel:+15162285100" style="display:flex;align-items:center;gap:8px"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>¿Prefiere hablar? Llame al 516-228-5100</a><a href="contact.html#text-es" style="display:flex;align-items:center;gap:8px"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M4 5h16v11H9l-5 4z"/></svg>O envíenos un texto</a></div></div>
-  <div class="band" style="grid-column:span 7;border-radius:4px;padding:32px 24px;display:flex;flex-direction:column;gap:16px">
-    <div class="form-2" style="display:flex;flex-direction:column;gap:16px"><div class="field"><label class="label" for="f-name-es">Nombre</label><input class="input" id="f-name-es" name="name" autocomplete="name"></div><div class="field"><label class="label" for="f-phone-es">Teléfono</label><input class="input" id="f-phone-es" name="phone" type="tel" autocomplete="tel"></div></div>
-    <div class="field"><label class="label" for="f-msg-es">Qué pasó</label><textarea class="input textarea" id="f-msg-es" name="message" placeholder="Con pocas palabras basta"></textarea></div>
-    <div class="field"><label class="label" for="f-email-es">Correo electrónico (opcional)</label><input class="input" id="f-email-es" name="email" type="email" autocomplete="email"></div>
-    <div style="display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap"><div class="field"><div class="label" id="f-lang-l-es">Idioma preferido</div><div class="pill formpill" role="group" aria-labelledby="f-lang-l-es" style="border-color:var(--slate)"><button type="button" class="on" aria-pressed="true" style="background:var(--ink);color:var(--paper)">English</button><button type="button" aria-pressed="false">Español</button></div></div><button class="btn primary send" type="button" style="width:220px;max-width:100%;border:0;font-family:inherit;cursor:pointer">Enviar mensaje</button></div>
-    <div class="sent" hidden role="status" style="padding:14px 16px;border-radius:4px;background:var(--paper);border:1px solid var(--recovered);color:var(--ink)">Solo es una demostración. No se envió nada. En el sitio real vería una confirmación con un número de referencia cuando la firma tenga su mensaje.</div>
+<section class="sec"><div class="wrap office">
+  <div style="grid-column:span 5"><div class="eyebrow">Oficina de Massapequa</div><div style="font-family:var(--serif);font-size:30px;line-height:1.2;margin-top:14px">4242 Merrick Road<br>Massapequa, New York 11758</div><div class="slot" style="margin-top:16px;display:inline-block">Horario: la firma debe indicarlo</div><div style="margin-top:24px;display:flex;gap:14px;flex-wrap:wrap"><a class="btn act" href="tel:+15162285100"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Llame al 516-228-5100</a><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=4242+Merrick+Road+Massapequa+NY+11758" target="_blank" rel="noopener"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg>Cómo llegar</a></div>
+    <div id="text-es" style="margin-top:48px;border-top:1px solid var(--line);padding-top:24px"><div class="eyebrow">Envíenos un texto</div><p style="margin:12px 0 0">Envíe un texto y le respondemos en horario de oficina.</p><a class="btn ghost" href="#intake-es" style="margin-top:16px"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M4 5h16v11H9l-5 4z"/></svg>Envíenos un texto</a><div class="slot" style="margin-top:14px;display:inline-block">El número de texto se muestra solo cuando la firma confirme que es para el público y que alguien lo atiende</div></div>
+    <div style="margin-top:32px" class="slot">Otras oficinas aparecen solo cuando la firma confirme una dirección</div></div>
+  <div style="grid-column:7 / 13"><div class="map"><img src="img/office.jpg" alt=""></div><div style="font-size:14px;color:var(--slate);margin-top:10px">Mapa fijo o foto de la oficina que abre las indicaciones. Sin mapa incrustado.</div></div>
+</div></section>
+<section class="sec intake" id="intake-es"><div class="wrap grid" style="align-items:start">
+  <div style="grid-column:span 5"><div class="eyebrow">Revisión gratis de su caso</div><h2 style="font-size:clamp(36px,4vw,56px);line-height:1.05;margin-top:16px">Envíenos un mensaje.</h2><p class="lead" style="margin-top:20px">Con pocas palabras basta. Alguien de esta oficina le devuelve la llamada.</p><div style="margin-top:28px;display:flex;flex-direction:column;gap:12px;font-weight:600"><a href="tel:+15162285100" style="display:flex;align-items:center;gap:10px"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>¿Prefiere hablar? Llame al 516-228-5100</a><a href="contact.html#text-es" style="display:flex;align-items:center;gap:10px"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M4 5h16v11H9l-5 4z"/></svg>O envíenos un texto</a></div></div>
+  <div style="grid-column:7 / 13;display:flex;flex-direction:column;gap:28px">
+    <div class="row2"><div class="field"><label for="f-name-es">Nombre</label><input class="input" id="f-name-es" name="name" autocomplete="name"></div><div class="field"><label for="f-phone-es">Teléfono</label><input class="input" id="f-phone-es" name="phone" type="tel" autocomplete="tel"></div></div>
+    <div class="field"><label for="f-msg-es">Qué pasó</label><textarea class="input" id="f-msg-es" name="message" placeholder="Con pocas palabras basta"></textarea></div>
+    <div class="row2"><div class="field"><label for="f-email-es">Correo electrónico (opcional)</label><input class="input" id="f-email-es" name="email" type="email" autocomplete="email"></div><div class="field"><div class="eyebrow" id="f-lang-l-es" style="font-size:13px">Idioma preferido</div><div class="langsel formpill" role="group" aria-labelledby="f-lang-l-es"><button type="button" class="on" aria-pressed="true">English</button><button type="button" aria-pressed="false">Español</button></div></div></div>
+    <div><button class="btn act send" type="button">Enviar mensaje</button><div class="sent" hidden role="status">Solo es una demostración. No se envió nada. En el sitio real vería una confirmación con un número de referencia cuando la firma tenga su mensaje.</div></div>
   </div>
-</div></section><div class="sticky">
-  <a class="btn primary" href="tel:+15162285100"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Llame al 516-228-5100</a>
-  <a class="btn outline" href="contact.html#text-es"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M4 5h16v11H9l-5 4z"/></svg>Enviar texto</a>
-</div></main><footer class="dark" style="padding:56px 0 40px"><div class="wrap grid" style="align-items:start">
-  <div style="grid-column:span 4;display:flex;flex-direction:column;gap:10px"><div class="disp" style="font-size:22px">NHG Law Group, P.C.</div><div class="label" style="color:rgba(255,255,255,.7)">Oficina de Massapequa</div><div>4242 Merrick Road<br>Massapequa, New York 11758</div><div style="display:flex;gap:10px;margin-top:6px;flex-wrap:wrap"><a class="btn outline sm" style="border-color:var(--paper);color:var(--paper)" href="tel:+15162285100"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>516-228-5100</a><a class="btn outline sm" style="border-color:var(--paper);color:var(--paper)" href="https://www.google.com/maps/search/?api=1&amp;query=4242+Merrick+Road+Massapequa+NY+11758" target="_blank" rel="noopener"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg>Cómo llegar</a></div><div class="slot" style="margin-top:6px">Horario: la firma debe indicarlo. Línea de texto: se muestra cuando se confirme</div></div>
-  <div class="links" style="grid-column:span 2;display:flex;flex-direction:column;gap:0"><a href="employment.html">Trabajo</a><a href="injury.html">Lesiones</a><a href="results.html">Resultados</a><a href="reviews.html">Opiniones</a><a href="attorneys.html">Abogados</a><a href="contact.html">Contacto</a></div>
-  <div class="links" style="grid-column:span 2;display:flex;flex-direction:column;gap:0"><a href="contact.html#intake-es">Enviar un mensaje</a><a href="accessibility.html">Declaración de accesibilidad</a><a href="privacy.html">Privacidad</a><div lang="es" style="font-weight:600;margin-top:8px">También atendemos en inglés</div></div>
-  <div style="grid-column:span 4;display:flex;flex-direction:column;gap:12px"><div class="slot">Redes sociales: solo las cuentas que la firma confirme antes del lanzamiento</div><div class="slot">Espacio para la etiqueta de publicidad: contenido según revisión de los abogados</div><div style="font-size:14px;color:rgba(255,255,255,.6)">© 2026 The NHG Law Group, P.C.</div><div class="draftline">Borrador para revisión de la firma. Textos, resultados y opiniones sujetos a aprobación.</div></div>
+</div></section><div class="sticky"><a class="btn act" href="tel:+15162285100"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Llame al 516-228-5100</a><a class="btn ghost" href="contact.html#text-es"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M4 5h16v11H9l-5 4z"/></svg>Enviar texto</a></div></main><footer class="dark"><div class="wrap grid" style="align-items:start">
+  <div style="grid-column:span 5"><div class="wordmark" style="font-size:28px">NHG Law Group, P.C.</div><div style="margin-top:20px;color:rgba(255,255,255,.85)">4242 Merrick Road<br>Massapequa, New York 11758</div><div style="margin-top:14px;display:flex;gap:18px;flex-wrap:wrap;font-weight:600"><a href="tel:+15162285100">516-228-5100</a><a href="https://www.google.com/maps/search/?api=1&amp;query=4242+Merrick+Road+Massapequa+NY+11758" target="_blank" rel="noopener">Cómo llegar</a></div><div class="slot" style="margin-top:14px;max-width:360px">Horario: la firma debe indicarlo. Línea de texto: se muestra cuando se confirme</div></div>
+  <div class="links" style="grid-column:span 2"><a href="employment.html">Trabajo</a><a href="injury.html">Lesiones</a><a href="results.html">Resultados</a><a href="reviews.html">Opiniones</a><a href="attorneys.html">Abogados</a><a href="contact.html">Contacto</a></div>
+  <div class="links" style="grid-column:span 2"><a href="contact.html#intake-es">Enviar un mensaje</a><a href="accessibility.html">Declaración de accesibilidad</a><a href="privacy.html">Privacidad</a><div lang="es" style="margin-top:10px;font-weight:600">También atendemos en inglés</div></div>
+  <div style="grid-column:span 3;display:flex;flex-direction:column;gap:10px"><div class="slot">Redes sociales: solo las cuentas que la firma confirme antes del lanzamiento</div><div class="slot">Espacio para la etiqueta de publicidad: contenido según revisión de los abogados</div><div style="font-size:13px;color:rgba(255,255,255,.55);margin-top:8px">© 2026 The NHG Law Group, P.C.</div><div class="draftline">Borrador para revisión de la firma. Textos, resultados y opiniones sujetos a aprobación.</div></div>
 </div></footer></div>
-<div id="sheet" role="dialog" aria-modal="true" aria-label="Menu"><div class="topbar"><div class="disp" style="font-size:20px">NHG Law Group</div><button class="close" aria-label="Close"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><nav></nav><div class="acts"></div></div>
+<div id="sheet" role="dialog" aria-modal="true" aria-label="Menu"><div class="topbar"><div class="wordmark">NHG Law Group</div><button class="close" aria-label="Close"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><nav></nav><div class="acts"></div></div>
 <div class="tag">Design concept · draft copy, not final</div>
 <script src="site.js"></script>
 </body>
