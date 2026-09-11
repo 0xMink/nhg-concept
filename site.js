@@ -15,7 +15,7 @@
     try{localStorage.setItem('nhg-lang',l)}catch(e){}
     show(l);
     document.querySelectorAll('.pill').forEach(function(p){
-      var sp=p.querySelectorAll('button, span'); if(sp.length!==2) return;
+      var sp=p.querySelectorAll(':scope > button, :scope > span'); if(sp.length!==2) return;
       var a=sp[0].textContent.trim(), b=sp[1].textContent.trim();
       if((a==='EN'||a==='ES')&&(b==='EN'||b==='ES')){ sp.forEach(function(s){ var on=s.textContent.trim().toLowerCase()===l; s.classList.toggle('on', on); if(s.tagName==='BUTTON') s.setAttribute('aria-pressed', on?'true':'false'); }); }
     });
@@ -35,20 +35,20 @@
   document.addEventListener('keydown',function(e){ var sh=document.getElementById('sheet'); if(e.key!=='Tab'||!sh.classList.contains('open')) return; var f=sh.querySelectorAll('button, a[href]'); if(!f.length) return; var first=f[0], last=f[f.length-1]; if(e.shiftKey&&document.activeElement===first){ e.preventDefault(); last.focus(); } else if(!e.shiftKey&&document.activeElement===last){ e.preventDefault(); first.focus(); } });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape' && document.getElementById('sheet').classList.contains('open')) closeSheet(); });
   // results: show the first 10 rows, the rest behind "Show all"
-  document.querySelectorAll('#allrows').forEach(function(a){ a.querySelectorAll('.row').forEach(function(r,i){ if(i>=10) r.classList.add('hid'); }); });
+  document.querySelectorAll('[id^=allrows]').forEach(function(a){ if(!document.querySelector('[id^=showall]')) return; a.querySelectorAll('.row').forEach(function(r,i){ if(i>=10) r.classList.add('hid'); }); });
   document.addEventListener('click',function(e){
     var fp=e.target.closest('.formpill button'); if(fp){ e.preventDefault(); fp.parentElement.querySelectorAll('button').forEach(function(b){ var on=b===fp; b.classList.toggle('on',on); b.setAttribute('aria-pressed',on?'true':'false'); b.style.background=on?'var(--ink)':'transparent'; b.style.color=on?'var(--paper)':'var(--ink)'; }); return; }
     var s=e.target.closest('.pill button, .pill span');
     if(s){ var t=s.textContent.trim(); if(t==='EN'||t==='ES'){ e.preventDefault(); setLang(t.toLowerCase()); } return; }
     if(e.target.closest('.menu-btn')){ e.preventDefault(); openSheet(e.target.closest('.menu-btn')); return; }
     if(e.target.closest('#sheet .close')){ e.preventDefault(); closeSheet(); return; }
-    if(e.target.closest('#showall')){ e.preventDefault(); var w=e.target.closest('[lang]')||document; w.querySelectorAll('#allrows .row').forEach(function(r){r.classList.remove('hid')}); e.target.closest('#showall').style.display='none'; return; }
+    if(e.target.closest('[id^=showall]')){ e.preventDefault(); var w=e.target.closest('[lang]')||document; w.querySelectorAll('[id^=allrows] .row').forEach(function(r){r.classList.remove('hid')}); e.target.closest('[id^=showall]').style.display='none'; return; }
     var send=e.target.closest('.send'); if(send){ e.preventDefault(); var box=send.parentElement.parentElement.querySelector('.sent'); if(box){ box.hidden=false; box.focus && box.focus(); } return; }
     var fp=e.target.closest('.formpill button'); if(fp){ e.preventDefault(); fp.parentElement.querySelectorAll('button').forEach(function(b){ var on=b===fp; b.classList.toggle('on',on); b.setAttribute('aria-pressed',on?'true':'false'); b.style.background=on?'var(--ink)':'transparent'; b.style.color=on?'var(--paper)':'var(--ink)'; }); return; }
     var chip=e.target.closest('.chip[data-filter]');
     if(chip){ e.preventDefault(); var f=chip.getAttribute('data-filter'); var wrap=chip.closest('[lang]')||document;
       wrap.querySelectorAll('.chip[data-filter]').forEach(function(c){ var on=c===chip; c.classList.toggle('on',on); c.setAttribute('aria-pressed',on?'true':'false'); });
-      wrap.querySelectorAll('.row.hid').forEach(function(r){r.classList.remove('hid')}); var sa=wrap.querySelector('#showall'); if(sa) sa.style.display='none';
+      wrap.querySelectorAll('.row.hid').forEach(function(r){r.classList.remove('hid')}); var sa=wrap.querySelector('[id^=showall]'); if(sa) sa.style.display='none';
       wrap.querySelectorAll('[data-practice]').forEach(function(r){ r.style.display=(f==='all'||r.getAttribute('data-practice')===f)?'':'none'; });
       return; }
   });
