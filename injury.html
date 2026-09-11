@@ -52,8 +52,8 @@ details.faq{border-bottom:1px solid #dfe3e8} details.faq summary{display:flex;ju
 .check{display:flex;gap:12px;align-items:flex-start}
 .check .box{width:28px;height:28px;border:2px solid var(--ink);border-radius:4px;display:flex;align-items:center;justify-content:center;flex:none;margin-top:2px}
 header.top{border-bottom:1px solid var(--stub);background:var(--paper)}
-header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:96px;gap:40px}
-header.top nav{display:flex;gap:24px;flex:1;justify-content:center;font-weight:600}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;min-height:96px;gap:24px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+header.top nav{display:flex;gap:20px;flex:1;justify-content:center;font-weight:600;flex-wrap:wrap}
 header.top .acts{display:flex;gap:12px;align-items:center;flex:none}
 .wordmark{font-size:26px;line-height:32px;font-weight:700;letter-spacing:-0.01em;white-space:nowrap}
 .menu-btn{display:none;width:48px;height:48px;align-items:center;justify-content:center;border:0;background:transparent;cursor:pointer}
@@ -86,6 +86,16 @@ html.viewing .slot, html.viewing .tag, html.viewing .reviews-sec, html.viewing .
   .tag{bottom:100px;right:12px;left:auto;font-size:12px;padding:6px 10px}
 }
 @media (min-width:900px){ .people{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px} .form-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px} }
+@media (min-width:900px) and (max-width:1199px){
+  .h1{font-size:44px;line-height:48px} .h2{font-size:32px;line-height:36px} .lead{font-size:20px;line-height:30px}
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))} .tiles-2{grid-template-columns:1fr}
+  .tile{flex-direction:row;align-items:center;min-height:72px;padding:14px 16px}
+  .row{gap:20px;padding:16px 20px} .row .amt{width:180px;font-size:30px;line-height:36px} .row .d{font-size:18px;line-height:28px}
+  .why-h{font-size:40px !important;line-height:44px !important}
+  header.top .acts .call{display:none}
+  header.top nav{display:none} header.top .menu-btn{display:flex}
+  .grid{gap:20px}
+}
 #esbar{display:none;position:static;z-index:20;background:#111827;color:#fff;font:16px/24px "Source Sans 3",Arial,sans-serif;padding:12px 20px;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap}
 #esbar a{color:#fff;font-weight:600;text-decoration:underline;text-underline-offset:3px}
 #esbar button{background:transparent;border:0;color:#fff;font-size:24px;line-height:1;cursor:pointer;width:48px;height:48px}
