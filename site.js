@@ -74,7 +74,7 @@
       var toR=to.map(function(b){return b.getBoundingClientRect()}); var fromR=from.map(function(b){return b.getBoundingClientRect()});
       var clones=from.map(function(b,i){ var c=b.cloneNode(true); c.className+=' fly'; c.setAttribute('aria-hidden','true'); c.style.left=fromR[i].left+'px'; c.style.top=fromR[i].top+'px'; c.style.width=fromR[i].width+'px'; c.style.height=fromR[i].height+'px'; document.body.appendChild(c); return c; });
       clones.forEach(function(c){ c.getBoundingClientRect(); });
-      requestAnimationFrame(function(){ clones.forEach(function(c,i){ var dx=toR[i].left-fromR[i].left, dy=toR[i].top-fromR[i].top, sx=toR[i].width/fromR[i].width, sy=toR[i].height/fromR[i].height; c.style.transform='translate('+dx+'px,'+dy+'px) scale('+sx+','+sy+')'; c.style.opacity='.9'; }); });
+      requestAnimationFrame(function(){ clones.forEach(function(c,i){ c.style.left=toR[i].left+'px'; c.style.top=toR[i].top+'px'; c.style.width=toR[i].width+'px'; c.style.height=toR[i].height+'px'; c.style.fontSize=getComputedStyle(to[i]).fontSize; c.style.opacity='.92'; }); });
       setTimeout(function(){ bar.style.visibility=''; bar.style.transition=''; clones.forEach(function(c){ c.remove(); }); }, 620);
       return true;
     }
