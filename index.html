@@ -71,9 +71,20 @@ header.top .acts{display:flex;gap:18px;align-items:center;font-weight:600;font-s
 .ledger .row:last-of-type{border-bottom:1px solid var(--line-d)}
 .ledger .amt{font-family:var(--mono);font-weight:400;font-size:clamp(40px,4.4vw,64px);line-height:1;letter-spacing:-0.03em;color:var(--paper)}
 .ledger .d{font-family:var(--serif);font-size:22px;line-height:1.35;color:rgba(255,255,255,.85)}
+.ledger .note{display:block;font-family:var(--sans);font-size:14px;color:rgba(255,255,255,.65);margin-top:6px}
 .ledger .head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:40px;flex-wrap:wrap}
 .ledger h2{font-size:clamp(36px,4vw,56px);line-height:1.05;max-width:16ch}
 .disc{font-size:14px;color:rgba(255,255,255,.7);margin:20px 0 0}
+/* press strip */
+.press{padding:40px 0;border-bottom:1px solid var(--line)}
+.pressin{display:flex;align-items:center;gap:40px;flex-wrap:wrap}
+.logos{display:flex;align-items:center;gap:36px;flex-wrap:wrap;flex:1}
+.logos img{height:22px;width:auto;opacity:.72}
+/* stats */
+.stats{padding:72px 0 56px}
+.statgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
+.stats .big{font-family:var(--mono);font-size:clamp(44px,5vw,72px);line-height:1;letter-spacing:-0.03em}
+.stats .lab{margin-top:12px;font-family:var(--serif);font-size:18px;line-height:1.35;color:rgba(255,255,255,.8);max-width:22ch}
 /* photo band */
 .band{position:relative;min-height:70vh;display:flex;align-items:center;color:var(--paper);overflow:hidden;background:var(--ink)}
 .band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:20% 50%}
@@ -173,6 +184,8 @@ html.viewing .reviews-grid .people{display:none} html.viewing .reviews-grid .slo
   .ledger .row{grid-template-columns:1fr;gap:6px;padding:22px 0} .ledger .amt{font-size:40px} .ledger .d{font-size:18px}
   .band{min-height:auto} .band .wrap{padding-top:72px;padding-bottom:72px} .band blockquote{font-size:30px}
   .team{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px} .team .name{font-size:18px}
+  .pressin{gap:20px} .logos{gap:22px 26px} .logos img{height:18px} .press{padding:28px 0}
+  .statgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 20px} .stats .big{font-size:40px} .stats .lab{font-size:16px}
   .intake .row2{grid-template-columns:1fr;gap:20px}
   .pagehero{padding:48px 0 40px} .pagehero h1{font-size:40px} .bio{grid-template-columns:1fr;gap:16px;padding:28px 0} .bio .name{font-size:26px}
   details.faq summary{font-size:20px;padding:18px 0}
@@ -203,6 +216,7 @@ html.viewing .reviews-grid .people{display:none} html.viewing .reviews-grid .slo
   <div class="facts"><span>Long Island, NYC, Westchester and Rockland</span><span lang="es">Se habla español</span></div></div>
   <div class="aside"><a href="injury.html" class="pr"><b>Personal injury</b>Construction accidents, car crashes, falls, medical mistakes.</a><a href="employment.html" class="pr"><b>Employment law</b>Unpaid overtime and wages, wrongful termination, harassment.</a></div>
 </div></section>
+<section class="press"><div class="wrap"><div class="pressin"><div class="eyebrow">As seen in</div><div class="logos"><img src="img/press/new-york-times.png" alt="The New York Times"><img src="img/press/newsday.png" alt="Newsday"><img src="img/press/new-york-post.png" alt="New York Post"><img src="img/press/crains.png" alt="Crain's New York Business"><img src="img/press/abc-news.png" alt="ABC News"><img src="img/press/fox-news.png" alt="Fox News"><img src="img/press/daily-mail.png" alt="Daily Mail"><img src="img/press/long-island-business-news.png" alt="Long Island Business News"><img src="img/press/new-york-law-journal.png" alt="New York Law Journal"><img src="img/press/lax963.png" alt="La X 96.3"></div></div><div class="slot" style="margin-top:12px;display:inline-block">Press logos are the ones on the firm's current site, re-cut in one color; the firm confirms each before launch</div></div></section>
 <section class="sec"><div class="wrap grid" style="align-items:start">
   <div style="grid-column:span 4"><div class="eyebrow">Where to start</div><h2 style="font-size:clamp(36px,4vw,56px);line-height:1.05;margin-top:14px">What happened to you?</h2><p class="lead" style="margin-top:16px;max-width:30ch">Pick whichever is closest and we'll take it from there.</p></div>
   <div style="grid-column:6 / 13" class="twocol">
@@ -259,6 +273,7 @@ html.viewing .reviews-grid .people{display:none} html.viewing .reviews-grid .slo
   <div class="facts"><span>Long Island, NYC, Westchester y Rockland</span><span lang="es">También atendemos en inglés</span></div></div>
   <div class="aside"><a href="injury.html" class="pr"><b>Lesiones personales</b>Accidentes de construcción, choques, caídas, errores médicos.</a><a href="employment.html" class="pr"><b>Derecho laboral</b>Horas extra y salarios sin pagar, despido injusto, acoso.</a></div>
 </div></section>
+<section class="press"><div class="wrap"><div class="pressin"><div class="eyebrow">Nos han cubierto</div><div class="logos"><img src="img/press/new-york-times.png" alt="The New York Times"><img src="img/press/newsday.png" alt="Newsday"><img src="img/press/new-york-post.png" alt="New York Post"><img src="img/press/crains.png" alt="Crain's New York Business"><img src="img/press/abc-news.png" alt="ABC News"><img src="img/press/fox-news.png" alt="Fox News"><img src="img/press/daily-mail.png" alt="Daily Mail"><img src="img/press/long-island-business-news.png" alt="Long Island Business News"><img src="img/press/new-york-law-journal.png" alt="New York Law Journal"><img src="img/press/lax963.png" alt="La X 96.3"></div></div><div class="slot" style="margin-top:12px;display:inline-block">Los logos de prensa son los del sitio actual de la firma, en un solo color; la firma confirma cada uno antes del lanzamiento</div></div></section>
 <section class="sec"><div class="wrap grid" style="align-items:start">
   <div style="grid-column:span 4"><div class="eyebrow">Por dónde empezar</div><h2 style="font-size:clamp(36px,4vw,56px);line-height:1.05;margin-top:14px">¿Qué le pasó?</h2><p class="lead" style="margin-top:16px;max-width:30ch">Elija lo que más se parezca y nosotros nos encargamos del resto.</p></div>
   <div style="grid-column:6 / 13" class="twocol">
