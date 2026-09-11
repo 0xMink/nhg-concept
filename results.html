@@ -89,6 +89,17 @@ header.top .acts{display:flex;gap:18px;align-items:center;font-weight:600;font-s
 .case .court{font-size:14px;color:var(--slate);margin-top:6px}
 .case p{margin:12px 0 0;max-width:60ch}
 .case .who{margin-top:10px;font-size:15px;color:var(--slate)} .case .who a{font-weight:600;color:var(--ink);margin-left:6px}
+/* steps */
+.steps{display:flex;flex-direction:column}
+.step{display:grid;grid-template-columns:56px 1fr;gap:20px;padding:24px 0;border-top:1px solid var(--line)}
+.step:last-child{border-bottom:1px solid var(--line)}
+.step .k{font-family:var(--serif);font-size:40px;line-height:1;font-weight:500;color:var(--act)}
+.step h3{font-size:24px;line-height:1.2} .step p{margin:8px 0 0;color:var(--slate);max-width:50ch}
+/* from the courts */
+.courts{padding:64px 0;border-top:1px solid var(--line)}
+.ci{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:20px 0;border-top:1px solid var(--line);color:var(--ink)}
+.ci:last-child{border-bottom:1px solid var(--line)} .ci:hover{text-decoration:none} .ci:hover .t{text-decoration:underline;text-underline-offset:4px}
+.ci .d{font-size:14px;color:var(--slate);padding-top:4px} .ci .t{font-family:var(--serif);font-size:22px;line-height:1.25} .ci .c{grid-column:2;font-size:14px;color:var(--slate)}
 /* photo band */
 .band{position:relative;min-height:70vh;display:flex;align-items:center;color:var(--paper);overflow:hidden;background:var(--ink)}
 .band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:20% 50%}
@@ -188,6 +199,8 @@ html.viewing .reviews-grid .people{display:none} html.viewing .reviews-grid .slo
   .ledger .row{grid-template-columns:1fr;gap:6px;padding:22px 0} .ledger .amt{font-size:44px} .ledger .d{font-size:18px}
   .band{min-height:auto} .band .wrap{padding-top:72px;padding-bottom:72px} .band blockquote{font-size:30px}
   .team{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px} .team .name{font-size:18px}
+  .step{grid-template-columns:40px 1fr;gap:14px} .step .k{font-size:30px} .step h3{font-size:20px}
+  .ci{grid-template-columns:1fr;gap:4px} .ci .c{grid-column:1} .ci .t{font-size:19px} .courts{padding:48px 0}
   .pressin{gap:20px} .logos{gap:22px 26px} .logos img{height:18px} .press{padding:28px 0}
   .statgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 20px} .stats .big{font-size:44px} .stats .lab{font-size:16px}
   .intake .row2{grid-template-columns:1fr;gap:20px}
