@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-lang="en">
+<html lang="en" data-lang="en" class="viewing">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
 <title>Contact — NHG Law Group concept</title>
@@ -9,19 +9,19 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:"Source Sans 3","Source Sans Pro","Segoe UI",Arial,sans-serif;font-size:18px;line-height:28px;-webkit-font-smoothing:antialiased}
 a{color:var(--ink);text-decoration:none} a:hover{text-decoration:underline;text-underline-offset:3px}
-.disp{font-family:"Bricolage Grotesque","Arial Narrow",Arial,sans-serif;font-weight:700;letter-spacing:-0.01em;text-wrap:pretty}
+.disp{font-family:"Bricolage Grotesque","Arial Narrow",Arial,sans-serif;font-weight:700;letter-spacing:0;text-wrap:pretty}
 .label{font-size:14px;line-height:20px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--slate)}
 .fig{font-family:"IBM Plex Mono","Courier New",monospace;font-weight:500;font-variant-numeric:tabular-nums}
-.btn{display:flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 22px;border-radius:999px;font-weight:600;font-size:18px;line-height:1;white-space:nowrap}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 22px;border-radius:6px;font-weight:600;font-size:18px;line-height:1;white-space:nowrap}
 .btn.primary{background:var(--hivis);color:var(--paper)} .btn.outline{border:2px solid var(--ink);color:var(--ink)} .btn.sm{height:48px;font-size:16px}
 .btn:hover{text-decoration:none}
 .slot{border:1px dashed var(--slate);border-radius:4px;padding:10px 12px;font-size:14px;line-height:20px;color:var(--slate)}
 .dark .slot{border-color:rgba(255,255,255,.4);color:rgba(255,255,255,.75)}
 .row.hid{display:none !important}
-.pill{display:flex;height:48px;border-radius:999px;border:2px solid var(--ink);overflow:hidden;font-weight:600;font-size:16px}
+.pill{display:flex;height:48px;border-radius:6px;border:2px solid var(--ink);overflow:hidden;font-weight:600;font-size:16px}
 .pill span,.pill button{display:flex;align-items:center;padding:0 14px;cursor:pointer;border:0;background:transparent;font:inherit;color:var(--ink);height:100%} .pill .on{background:var(--hivis);color:var(--paper)}
 :focus-visible{outline:3px solid var(--hivis);outline-offset:2px}
-.chip{display:flex;align-items:center;height:48px;padding:0 16px;border-radius:999px;border:2px solid var(--ink);font-weight:600;font-size:16px;cursor:pointer;background:transparent;font-family:inherit}
+.chip{display:flex;align-items:center;height:48px;padding:0 16px;border-radius:6px;border:2px solid var(--ink);font-weight:600;font-size:16px;cursor:pointer;background:transparent;font-family:inherit}
 .chip.on{background:var(--ink);color:var(--paper)}
 .field{display:flex;flex-direction:column;gap:6px}
 .input{height:56px;border:1px solid var(--slate);border-radius:4px;background:var(--paper);padding:0 14px;display:flex;align-items:center;color:var(--ink);font-size:18px;font-family:inherit;width:100%}
@@ -35,7 +35,7 @@ footer .links a{display:flex;align-items:center;min-height:44px}
 .skip{position:absolute;left:-9999px;top:8px;background:var(--paper);color:var(--ink);padding:12px 16px;border-radius:4px;z-index:50;font-weight:600} .skip:focus{left:16px}
 .band{background:var(--stub)}
 .sec{padding:72px 0}
-.h1{font-size:56px;line-height:60px;font-weight:800;letter-spacing:-0.02em}
+.h1{font-size:56px;line-height:60px;font-weight:700;letter-spacing:0}
 .h2{font-size:40px;line-height:44px}
 .lead{font-size:22px;line-height:32px;color:var(--slate)}
 .card{background:var(--paper);border:1px solid #dfe3e8;border-radius:4px}
@@ -43,7 +43,7 @@ footer .links a{display:flex;align-items:center;min-height:44px}
 .tile .t{font-weight:600;font-size:19px;line-height:26px} .tile .s{font-size:15px;line-height:21px;color:var(--slate)}
 .tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px} .tiles-2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .row{display:flex;gap:32px;align-items:baseline;padding:20px 32px}
-.row .amt{width:240px;flex:none;text-align:right;font-size:40px;line-height:48px;color:var(--ledger-result)}
+.row .amt{width:240px;flex:none;text-align:right;font-size:40px;line-height:48px;color:var(--paper)}
 .row .d{font-size:20px;line-height:30px}
 .person{display:flex;gap:14px;align-items:center;padding:16px;background:var(--stub);border-radius:4px}
 .person img,.person .ph{width:64px;height:64px;border-radius:999px;object-fit:cover;flex:none}
@@ -60,12 +60,15 @@ header.top .acts{display:flex;gap:12px;align-items:center;flex:none}
 .sticky{display:none}
 .tag{position:fixed;left:16px;bottom:16px;background:#111827;color:#fff;font:600 13px/18px "Source Sans 3",Arial,sans-serif;padding:8px 12px;border-radius:999px;opacity:.85;z-index:9}
 .hide-m{display:block}
+html.viewing .reviews-grid .people{display:none} html.viewing .reviews-grid .slot{display:block !important}
+html.viewing .slot, html.viewing .tag, html.viewing .reviews-sec, html.viewing .slot-row{display:none !important}
+.draftline{font-size:14px;line-height:20px;color:rgba(255,255,255,.7);margin-top:8px}
 @media (max-width:899px){
   body{font-size:18px}
   .wrap{padding:0 20px}
   .grid{display:flex;flex-direction:column;gap:24px}
   .sec{padding:36px 0}
-  .h1{font-size:40px;line-height:44px} .h2{font-size:28px;line-height:32px} .lead{font-size:20px;line-height:30px}
+  .h1{font-size:36px;line-height:40px} .h2{font-size:28px;line-height:32px} .lead{font-size:20px;line-height:30px}
   .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
   .tiles{grid-template-columns:1fr;gap:8px} .tile{flex-direction:row;align-items:center;gap:14px;min-height:72px;padding:14px 16px} .tile .t{font-size:18px;line-height:24px} .tile .s{font-size:14px;line-height:20px}
   .people .card:nth-child(n+3){display:none}
@@ -128,7 +131,7 @@ header.top .acts{display:flex;gap:12px;align-items:center;flex:none}
   <div style="grid-column:span 4;display:flex;flex-direction:column;gap:10px"><div class="disp" style="font-size:22px">NHG Law Group, P.C.</div><div class="label" style="color:rgba(255,255,255,.7)">Massapequa office</div><div>4242 Merrick Road<br>Massapequa, New York 11758</div><div style="display:flex;gap:10px;margin-top:6px;flex-wrap:wrap"><a class="btn outline sm" style="border-color:var(--paper);color:var(--paper)" href="tel:+15162285100"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>516-228-5100</a><a class="btn outline sm" style="border-color:var(--paper);color:var(--paper)" href="https://www.google.com/maps/search/?api=1&amp;query=4242+Merrick+Road+Massapequa+NY+11758" target="_blank" rel="noopener"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg>Directions</a></div><div class="slot" style="margin-top:6px">Hours: firm to supply. Text line: shown once confirmed</div></div>
   <div class="links" style="grid-column:span 2;display:flex;flex-direction:column;gap:0"><a href="employment.html">Employment</a><a href="injury.html">Injury</a><a href="results.html">Results</a><a href="reviews.html">Reviews</a><a href="attorneys.html">Attorneys</a><a href="contact.html">Contact</a></div>
   <div class="links" style="grid-column:span 2;display:flex;flex-direction:column;gap:0"><a href="contact.html#intake">Send a message</a><a href="accessibility.html">Accessibility statement</a><a href="privacy.html">Privacy</a><div lang="es" style="font-weight:600;margin-top:8px">Se habla español</div></div>
-  <div style="grid-column:span 4;display:flex;flex-direction:column;gap:12px"><div class="slot">Social links: only destinations the firm confirms before launch</div><div class="slot">Advertising label slot: contents per attorney review</div><div style="font-size:14px;color:rgba(255,255,255,.6)">© 2026 The NHG Law Group, P.C.</div></div>
+  <div style="grid-column:span 4;display:flex;flex-direction:column;gap:12px"><div class="slot">Social links: only destinations the firm confirms before launch</div><div class="slot">Advertising label slot: contents per attorney review</div><div style="font-size:14px;color:rgba(255,255,255,.6)">© 2026 The NHG Law Group, P.C.</div><div class="draftline">Draft for the firm's review. Copy, results wording and client reviews are subject to the firm's approval.</div></div>
 </div></footer></div>
 <div id="page-es" lang="es" style="display:none"><header class="top"><div class="wrap">
   <div class="pill" style="flex:none" role="group" aria-label="Language"><button class="on" aria-pressed="true" lang="en">EN</button><button aria-pressed="false" lang="es">ES</button></div>
@@ -161,7 +164,7 @@ header.top .acts{display:flex;gap:12px;align-items:center;flex:none}
   <div style="grid-column:span 4;display:flex;flex-direction:column;gap:10px"><div class="disp" style="font-size:22px">NHG Law Group, P.C.</div><div class="label" style="color:rgba(255,255,255,.7)">Oficina de Massapequa</div><div>4242 Merrick Road<br>Massapequa, New York 11758</div><div style="display:flex;gap:10px;margin-top:6px;flex-wrap:wrap"><a class="btn outline sm" style="border-color:var(--paper);color:var(--paper)" href="tel:+15162285100"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>516-228-5100</a><a class="btn outline sm" style="border-color:var(--paper);color:var(--paper)" href="https://www.google.com/maps/search/?api=1&amp;query=4242+Merrick+Road+Massapequa+NY+11758" target="_blank" rel="noopener"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg>Cómo llegar</a></div><div class="slot" style="margin-top:6px">Horario: la firma debe indicarlo. Línea de texto: se muestra cuando se confirme</div></div>
   <div class="links" style="grid-column:span 2;display:flex;flex-direction:column;gap:0"><a href="employment.html">Trabajo</a><a href="injury.html">Lesiones</a><a href="results.html">Resultados</a><a href="reviews.html">Opiniones</a><a href="attorneys.html">Abogados</a><a href="contact.html">Contacto</a></div>
   <div class="links" style="grid-column:span 2;display:flex;flex-direction:column;gap:0"><a href="contact.html#intake-es">Enviar un mensaje</a><a href="accessibility.html">Declaración de accesibilidad</a><a href="privacy.html">Privacidad</a><div lang="es" style="font-weight:600;margin-top:8px">También atendemos en inglés</div></div>
-  <div style="grid-column:span 4;display:flex;flex-direction:column;gap:12px"><div class="slot">Redes sociales: solo las cuentas que la firma confirme antes del lanzamiento</div><div class="slot">Espacio para la etiqueta de publicidad: contenido según revisión de los abogados</div><div style="font-size:14px;color:rgba(255,255,255,.6)">© 2026 The NHG Law Group, P.C.</div></div>
+  <div style="grid-column:span 4;display:flex;flex-direction:column;gap:12px"><div class="slot">Redes sociales: solo las cuentas que la firma confirme antes del lanzamiento</div><div class="slot">Espacio para la etiqueta de publicidad: contenido según revisión de los abogados</div><div style="font-size:14px;color:rgba(255,255,255,.6)">© 2026 The NHG Law Group, P.C.</div><div class="draftline">Borrador para revisión de la firma. Textos, resultados y opiniones sujetos a aprobación.</div></div>
 </div></footer></div>
 <div id="sheet" role="dialog" aria-modal="true" aria-label="Menu"><div class="topbar"><div class="disp" style="font-size:20px">NHG Law Group</div><button class="close" aria-label="Close"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><nav></nav><div class="acts"></div></div>
 <div class="tag">Design concept · draft copy, not final</div>
