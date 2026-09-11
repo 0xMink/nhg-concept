@@ -12,6 +12,7 @@
   }
   function setLang(l){
     root.setAttribute('data-lang',l); root.setAttribute('lang',l);
+    setTimeout(function(){ var c=document.querySelector('#page-'+l+' .hero .cta'); if(c){ var r=c.getBoundingClientRect(); root.classList.toggle('past-hero', r.bottom<0); } },50);
     try{localStorage.setItem('nhg-lang',l)}catch(e){}
     show(l);
     document.querySelectorAll('.pill').forEach(function(p){
@@ -78,13 +79,14 @@
       setTimeout(function(){ bar.style.visibility=''; bar.style.transition=''; clones.forEach(function(c){ c.remove(); }); }, 620);
       return true;
     }
-    var cta=document.querySelector('#page-en .hero .cta'); if(!cta){ root.classList.add('no-hero'); return; }
+    var ctas=document.querySelectorAll('.hero .cta'); if(!ctas.length){ root.classList.add('no-hero'); return; }
     if(!('IntersectionObserver' in window)){ root.classList.add('past-hero'); return; }
-    new IntersectionObserver(function(es){ es.forEach(function(e){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){
+      if(e.target.offsetParent===null) return; // the hidden language's hero
       var gone=!e.isIntersecting && e.boundingClientRect.top<0;
       if(gone && !flown && !reduce){ flown=true; if(fly()) return; }
       root.classList.toggle('past-hero', gone);
-    }); },{threshold:0}).observe(cta);
+    }); },{threshold:0}); ctas.forEach(function(c){ io.observe(c); });
   })();
   var fit=function(){ var z=Math.min(1,window.innerWidth/1440); document.querySelectorAll('.desk').forEach(function(d){d.style.zoom=z}); };
   fit(); window.addEventListener('resize',fit);
