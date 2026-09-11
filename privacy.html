@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
 <title>Privacy — NHG Law Group</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap">
 <style>
 :root{--ink:#12143A;--ink2:#1b1d46;--slate:#4A5163;--paper:#FFFFFF;--cream:#F4F1EA;--line:#DDD8CC;--line-d:rgba(255,255,255,.16);--act:#B84A22;--serif:"Source Serif 4","Georgia","Times New Roman",serif;--sans:"Source Sans 3","Segoe UI",Arial,sans-serif;--mono:"IBM Plex Mono","Courier New",monospace}
 *{box-sizing:border-box} html{scroll-behavior:smooth} @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -67,9 +67,9 @@ header.top .acts{display:flex;gap:18px;align-items:center;font-weight:600;font-s
 /* ledger */
 .ledger{padding:120px 0}
 .ledger .row{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:40px;align-items:baseline;padding:24px 0;border-top:1px solid var(--line-d)}
-.ledgers .row{grid-template-columns:1fr;gap:6px;padding:22px 0} .ledgers .amt{font-size:clamp(40px,4vw,56px)} .ledgers .d{font-size:19px}
+.ledgers .row{grid-template-columns:1fr;gap:6px;padding:22px 0} .ledgers .amt{font-size:clamp(44px,4.4vw,60px)} .ledgers .d{font-size:19px}
 .ledger .row:last-of-type{border-bottom:1px solid var(--line-d)}
-.ledger .amt{font-family:var(--mono);font-weight:400;font-size:clamp(40px,4.4vw,64px);line-height:1;letter-spacing:-0.03em;color:var(--paper)}
+.ledger .amt{font-family:var(--serif);font-weight:600;font-size:clamp(44px,4.8vw,72px);line-height:1;letter-spacing:-0.02em;color:var(--paper);font-variant-numeric:lining-nums tabular-nums}
 .ledger .d{font-family:var(--serif);font-size:22px;line-height:1.35;color:rgba(255,255,255,.85)}
 .ledger .note{display:block;font-family:var(--sans);font-size:14px;color:rgba(255,255,255,.65);margin-top:6px}
 .ledger .head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:40px;flex-wrap:wrap}
@@ -83,7 +83,7 @@ header.top .acts{display:flex;gap:18px;align-items:center;font-weight:600;font-s
 /* stats */
 .stats{padding:72px 0 56px}
 .statgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
-.stats .big{font-family:var(--mono);font-size:clamp(44px,5vw,72px);line-height:1;letter-spacing:-0.03em}
+.stats .big{font-family:var(--serif);font-weight:600;font-size:clamp(48px,5.4vw,80px);line-height:1;letter-spacing:-0.02em;font-variant-numeric:lining-nums tabular-nums}
 .stats .lab{margin-top:12px;font-family:var(--serif);font-size:18px;line-height:1.35;color:rgba(255,255,255,.8);max-width:22ch}
 /* photo band */
 .band{position:relative;min-height:70vh;display:flex;align-items:center;color:var(--paper);overflow:hidden;background:var(--ink)}
@@ -181,11 +181,11 @@ html.viewing .reviews-grid .people{display:none} html.viewing .reviews-grid .slo
   .hero h1{font-size:40px;max-width:none} .hero .aside{display:flex;flex-direction:column;gap:12px;margin-top:28px;border-top:1px solid rgba(255,255,255,.3);padding-top:20px} .hero .aside .pr{border-left:0;padding-left:0} .hero .cta{flex-direction:column} .hero .cta .btn{width:100%}
   .hero .facts{gap:10px;flex-direction:column}
   .twocol{grid-template-columns:1fr;gap:36px} .sit a{grid-template-columns:1fr auto;gap:12px;padding:20px 0} .sit .t{font-size:24px} .sit .s{font-size:15px}
-  .ledger .row{grid-template-columns:1fr;gap:6px;padding:22px 0} .ledger .amt{font-size:40px} .ledger .d{font-size:18px}
+  .ledger .row{grid-template-columns:1fr;gap:6px;padding:22px 0} .ledger .amt{font-size:44px} .ledger .d{font-size:18px}
   .band{min-height:auto} .band .wrap{padding-top:72px;padding-bottom:72px} .band blockquote{font-size:30px}
   .team{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px} .team .name{font-size:18px}
   .pressin{gap:20px} .logos{gap:22px 26px} .logos img{height:18px} .press{padding:28px 0}
-  .statgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 20px} .stats .big{font-size:40px} .stats .lab{font-size:16px}
+  .statgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 20px} .stats .big{font-size:44px} .stats .lab{font-size:16px}
   .intake .row2{grid-template-columns:1fr;gap:20px}
   .pagehero{padding:48px 0 40px} .pagehero h1{font-size:40px} .bio{grid-template-columns:1fr;gap:16px;padding:28px 0} .bio .name{font-size:26px}
   details.faq summary{font-size:20px;padding:18px 0}
