@@ -48,7 +48,7 @@ header.top .acts{display:flex;gap:18px;align-items:center;font-weight:600;font-s
 /* hero */
 .hero{position:relative;min-height:min(96vh,820px);display:flex;align-items:flex-end;color:var(--paper);overflow:hidden;background:var(--ink)}
 .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,36,66,.38) 0%,rgba(16,36,66,.05) 28%,rgba(16,36,66,.2) 55%,rgba(16,36,66,.9) 100%),linear-gradient(90deg,rgba(16,36,66,.35) 0%,rgba(16,36,66,0) 55%)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,36,66,.62) 0%,rgba(16,36,66,.55) 9%,rgba(16,36,66,.05) 30%,rgba(16,36,66,.2) 55%,rgba(16,36,66,.9) 100%),linear-gradient(90deg,rgba(16,36,66,.35) 0%,rgba(16,36,66,0) 55%)}
 .hero .wrap{position:relative;z-index:1;padding-bottom:56px;padding-top:150px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px;align-items:end}
 .hero h1{font-size:clamp(40px,3.2vw + 1rem,64px);line-height:1.04;font-weight:500;letter-spacing:-0.02em;max-width:15ch}
 .hero .lead{color:rgba(255,255,255,.85);max-width:34ch;margin-top:20px;font-size:22px}
@@ -176,7 +176,7 @@ html.viewing .reviews-grid .people{display:none} html.viewing .reviews-grid .slo
 #esbar button{background:transparent;border:0;color:#fff;font-size:24px;line-height:1;cursor:pointer;width:48px;height:48px}
 #sheet{display:none;position:fixed;inset:0;z-index:30;background:var(--ink);color:var(--paper);flex-direction:column;padding:20px 24px}
 #sheet.open{display:flex}
-#sheet .topbar{display:flex;justify-content:space-between;align-items:center;height:48px}
+#sheet .topbar{display:flex;justify-content:space-between;align-items:center;height:48px} html[data-lang="es"] .sheet-en, html:not([data-lang="es"]) .sheet-es{display:none}
 #sheet .close{width:48px;height:48px;display:flex;align-items:center;justify-content:center;border:0;background:transparent;cursor:pointer;color:var(--paper)}
 #sheet nav{display:flex;flex-direction:column;margin-top:32px;flex:1}
 #sheet nav a{font-family:var(--serif);font-size:36px;line-height:1.1;padding:14px 0;border-bottom:1px solid var(--line-d);color:var(--paper);text-decoration:none}
@@ -300,7 +300,7 @@ html.viewing .reviews-grid .people{display:none} html.viewing .reviews-grid .slo
   <div class="links" style="grid-column:span 2"><a href="contact.html#intake-es">Enviar mensaje</a><a href="accessibility.html">Declaración de accesibilidad</a><a href="privacy.html">Privacidad</a><div lang="es" style="margin-top:10px;font-weight:600">También atendemos en inglés</div></div>
   <div style="grid-column:span 3;display:flex;flex-direction:column;gap:10px"><div class="slot">Redes sociales: solo las cuentas que la firma confirme antes del lanzamiento</div><div class="slot">Espacio para la etiqueta de publicidad: contenido según revisión de los abogados</div><div style="font-size:13px;color:rgba(255,255,255,.55);margin-top:8px">© 2026 The NHG Law Group, P.C.</div><div class="draftline">Borrador para revisión de la firma. Textos, resultados y opiniones sujetos a aprobación.</div></div>
 </div></footer></div>
-<div id="sheet" role="dialog" aria-modal="true" aria-label="Menu"><div class="topbar"><img src="img/brand/nhg-lockup-en-ivory.svg" alt="NHG Law Group" style="height:22px;width:auto"><button class="close" aria-label="Close"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><nav></nav><div class="acts"></div></div>
+<div id="sheet" role="dialog" aria-modal="true" aria-label="Menu"><div class="topbar"><img class="sheet-lock sheet-en" src="img/brand/nhg-lockup-en-ivory.svg" alt="NHG Law Group, Employment and Injury Lawyers" style="height:32px;width:auto"><img class="sheet-lock sheet-es" src="img/brand/nhg-lockup-es-ivory.svg" alt="NHG Law Group, Abogados de Empleo y Lesiones" style="height:32px;width:auto"><button class="close" aria-label="Close"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><nav></nav><div class="acts"></div></div>
 <div class="tag">Design concept · draft copy, not final</div>
 <script src="site.js"></script>
 </body>
