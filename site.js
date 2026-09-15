@@ -1,3 +1,13 @@
+(function(){
+  // cache busting: GitHub Pages lets browsers keep a page for ten minutes and assets far longer.
+  // Ask for the current build id uncached; if this page is older, reload once so the fresh HTML (with new asset hashes) is fetched.
+  var mine=document.documentElement.getAttribute('data-build'); if(!mine||location.protocol==='file:') return;
+  fetch('version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
+    if(!v.build||v.build===mine) return;
+    var k='nhg-reloaded-'+v.build; try{ if(sessionStorage.getItem(k)) return; sessionStorage.setItem(k,'1'); }catch(e){}
+    location.reload();
+  }).catch(function(){});
+})();
 
 (function(){
   var root=document.documentElement;
