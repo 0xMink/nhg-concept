@@ -78,13 +78,13 @@ header.top .acts{display:flex;gap:18px;align-items:center;font-weight:600;font-s
 .ledger h2{font-size:clamp(36px,4vw,56px);line-height:1.05;max-width:16ch}
 .disc{font-size:14px;color:rgba(255,255,255,.7);margin:20px 0 0}
 /* press strip */
-.press{padding:40px 0;border-bottom:1px solid var(--line)}
+.press{padding:44px 0;background:var(--cream);border-bottom:1px solid var(--line)} .press .eyebrow{font-family:var(--serif);font-size:22px;letter-spacing:0;text-transform:none;font-weight:500;color:var(--ink);white-space:nowrap}
 .pressin{display:flex;align-items:center;gap:40px;flex-wrap:wrap}
 .logos{flex:1;min-width:0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 48px,#000 calc(100% - 48px),transparent);mask-image:linear-gradient(90deg,transparent,#000 48px,#000 calc(100% - 48px),transparent)}
 .logos::-webkit-scrollbar{display:none} .logos:focus-visible{outline:2px solid var(--act);outline-offset:6px}
 .logos .track{display:flex;width:max-content;animation:press-drift 48s linear infinite}
-.logos .set{display:flex;align-items:center;gap:36px;padding-right:36px;flex:0 0 auto}
-.logos img{height:22px;width:auto;opacity:.72;flex:0 0 auto}
+.logos .set{display:flex;align-items:center;gap:56px;padding-right:56px;flex:0 0 auto}
+.logos img{height:34px;width:auto;opacity:1;flex:0 0 auto}
 .logos:hover .track,.logos:focus-within .track{animation-play-state:paused}
 @keyframes press-drift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.logos .track{animation:none} .logos .set[aria-hidden]{display:none}}
@@ -211,7 +211,7 @@ html.viewing .reviews-grid .people{display:none} html.viewing .reviews-grid .slo
   .team{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px} .team .name{font-size:18px}
   .step{grid-template-columns:40px 1fr;gap:14px} .step .k{font-size:30px} .step h3{font-size:20px}
   .ci{grid-template-columns:1fr;gap:4px} .ci .c{grid-column:1} .ci .t{font-size:19px} .courts{padding:48px 0}
-  .pressin{display:block} .pressin .eyebrow{margin-bottom:14px} .logos{display:block;width:calc(100% + 40px);margin:0 -20px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent);mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent)} .logos .set{gap:26px;padding:0 26px 0 0} .logos .set:first-child{padding-left:20px} .logos img{height:18px} .press{padding:28px 0}
+  .pressin{display:block} .pressin .eyebrow{margin-bottom:16px;font-size:20px} .logos{display:block;width:calc(100% + 40px);margin:0 -20px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent);mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent)} .logos .set{gap:36px;padding:0 36px 0 0} .logos .set:first-child{padding-left:20px} .logos img{height:26px} .press{padding:32px 0}
   .statgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 20px} .stats .big{font-size:44px} .stats .lab{font-size:16px}
   .intake .row2{grid-template-columns:1fr;gap:20px}
   .pagehero{padding:48px 0 40px} .pagehero h1{font-size:40px} .bio{grid-template-columns:1fr;gap:16px;padding:28px 0} .bio .name{font-size:26px}
