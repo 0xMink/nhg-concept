@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-lang="en" class="viewing" data-build="20260916-1416">
+<html lang="en" data-lang="en" class="viewing" data-build="20260916-1746">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="img/brand/nhg-favicon.svg?v=feaebb1a" type="image/svg+xml"><link rel="icon" href="img/brand/nhg-favicon-32.png?v=7a0a0cfb" sizes="32x32"><link rel="apple-touch-icon" href="img/brand/nhg-favicon-180.png?v=4702ea49"><meta name="theme-color" content="#102442">
@@ -177,15 +177,22 @@ html.viewing .reviews-grid .people{display:none} html.viewing .reviews-grid .slo
 .tag{position:fixed;left:16px;bottom:16px;background:var(--ink);color:#fff;font:600 12px/1.4 var(--sans);padding:8px 12px;border-radius:3px;opacity:.85;z-index:9}
 /* sticky bar + sheet + esbar */
 .sticky{display:none}
-.reach-tab{position:fixed;right:0;top:50%;z-index:6;writing-mode:vertical-rl;transform:translate(110%,-50%);transition:transform .25s ease;background:var(--ink);color:var(--paper);border:1px solid rgba(245,241,232,.45);border-right:0;border-radius:6px 0 0 6px;padding:18px 12px;font:600 14px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;box-shadow:0 6px 24px rgba(16,36,66,.18)}
-.reach-tab:hover{background:var(--ink2)} .reach-tab:focus-visible{outline:2px solid var(--act);outline-offset:2px}
-html.past-hero .reach-tab, html.no-hero .reach-tab{transform:translate(0,-50%)} html.dlg-open .reach-tab{transform:translate(110%,-50%)}
+/* pinned header (desktop): once the hero's own buttons are gone, the header becomes a slim fixed bar so the phone and Free case review are always in view */
+@media (min-width:900px){
+  html.pinned header.top{position:fixed;inset:0 0 auto 0;color:var(--ink);background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);box-shadow:0 2px 18px rgba(16,36,66,.08);animation:pin .28s ease}
+  html.pinned header.top .wrap{height:64px} html.pinned header.top .lock{height:28px}
+  html.pinned header.top .lock-ivory{display:none !important} html.pinned header.top .lock-ink.lock-wide{display:block}
+  html.pinned header.top .pill .on span{color:var(--paper)}
+  html.pinned.solid-hdr body{padding-top:88px}
+  @keyframes pin{from{transform:translateY(-100%)}to{transform:none}}
+  @media (prefers-reduced-motion:reduce){html.pinned header.top{animation:none}}
+}
 .dlg{display:none;position:fixed;inset:0;z-index:40;background:rgba(16,36,66,.45);align-items:center;justify-content:flex-end;padding:24px} .dlg.open{display:flex}
 .reach-card{position:relative;width:min(420px,100%);background:var(--paper);border-radius:6px;padding:36px 32px 28px;box-shadow:0 24px 60px rgba(16,36,66,.3);display:flex;flex-direction:column;gap:12px}
 .reach-card .close{position:absolute;top:12px;right:12px;width:44px;height:44px;border:0;background:transparent;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:6px} .reach-card .close:hover{background:var(--cream)}
 .reach-card h2{font-family:var(--serif);font-weight:500;font-size:30px;line-height:1.1;margin:8px 0 0} .reach-card p{margin:0 0 12px;color:var(--slate)}
 .reach-card .btn{justify-content:flex-start;height:auto;padding:14px 18px;gap:14px;text-align:left} .reach-card .btn span{display:flex;flex-direction:column;line-height:1.2} .reach-card .btn small{font-weight:400;font-size:14px;opacity:.85}
-@media (max-width:899px){.reach-tab{display:none}}
+
 #esbar{display:none;position:static;z-index:20;background:var(--ink);color:#fff;font:16px/1.5 var(--sans);padding:12px 20px;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap}
 #esbar a{color:#fff;font-weight:600;text-decoration:underline;text-underline-offset:3px}
 #esbar button{background:transparent;border:0;color:#fff;font-size:24px;line-height:1;cursor:pointer;width:48px;height:48px}
@@ -243,7 +250,7 @@ html.past-hero .reach-tab, html.no-hero .reach-tab{transform:translate(0,-50%)} 
   <div class="acts">
     <div class="pill" role="group" aria-label="Language"><button class="on" aria-pressed="true" lang="en"><span>EN</span></button><button aria-pressed="false" lang="es"><span>ES</span></button></div>
     <a class="call" href="tel:+15162285100">516-228-5100</a>
-    <a class="btn ghost sm" href="contact.html#intake">Free case review</a>
+    <a class="btn ghost sm open-reach" href="contact.html#intake" aria-haspopup="dialog" aria-controls="reach" aria-expanded="false">Free case review</a>
     <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="sheet"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </div>
 </div></header><a class="skip" href="#main">Skip to content</a><main id="main"><section class="pagehero"><div class="wrap grid" style="align-items:center">
@@ -268,7 +275,7 @@ html.past-hero .reach-tab, html.no-hero .reach-tab{transform:translate(0,-50%)} 
   <div style="grid-column:span 5"><img src="img/brand/nhg-lockup-lawgroup-ivory.svg?v=a79c15fb" alt="NHG Law Group" style="height:36px;width:auto"><div style="font-size:14px;color:rgba(255,255,255,.6);margin-top:8px">The NHG Law Group, P.C.</div><div style="margin-top:20px;color:rgba(255,255,255,.85)">4242 Merrick Road<br>Massapequa, New York 11758</div><div style="margin-top:14px;display:flex;gap:18px;flex-wrap:wrap;font-weight:600"><a href="tel:+15162285100">516-228-5100</a><a href="sms:+15163622613">Text 516-362-2613</a><a href="https://www.google.com/maps/search/?api=1&amp;query=4242+Merrick+Road+Massapequa+NY+11758" target="_blank" rel="noopener">Directions</a></div><div class="slot" style="margin-top:14px;max-width:360px">Hours: firm to supply. Text line: shown once confirmed</div></div>
   <div class="links" style="grid-column:span 2"><a href="injury.html">Injury</a><a href="employment.html">Employment</a><a href="results.html">Results</a><a href="reviews.html">Reviews</a><a href="attorneys.html">Attorneys</a><a href="contact.html">Contact</a></div>
   <div class="links" style="grid-column:span 2"><a href="contact.html#intake">Send a message</a><a href="accessibility.html">Accessibility statement</a><a href="privacy.html">Privacy</a><div lang="es" style="margin-top:10px;font-weight:600">Se habla español</div></div>
-  <div style="grid-column:span 3;display:flex;flex-direction:column;gap:10px"><div class="slot">Social links: only destinations the firm confirms before launch</div><div class="slot">Advertising label slot: contents per attorney review</div><div style="font-size:13px;color:rgba(255,255,255,.55);margin-top:8px">© 2026 The NHG Law Group, P.C.</div><div class="draftline">Draft for the firm's review. Copy, results wording and client reviews are subject to the firm's approval. <span class="built">Updated Sep 16, 2026, 2:16 PM ET</span></div></div>
+  <div style="grid-column:span 3;display:flex;flex-direction:column;gap:10px"><div class="slot">Social links: only destinations the firm confirms before launch</div><div class="slot">Advertising label slot: contents per attorney review</div><div style="font-size:13px;color:rgba(255,255,255,.55);margin-top:8px">© 2026 The NHG Law Group, P.C.</div><div class="draftline">Draft for the firm's review. Copy, results wording and client reviews are subject to the firm's approval. <span class="built">Updated Sep 16, 2026, 5:46 PM ET</span></div></div>
 </div></footer></div>
 <div id="page-es" lang="es" style="display:none"><header class="top solid"><div class="wrap">
   <a class="wordmark" href="index.html"><img class="lock lock-ink lock-wide" src="img/brand/nhg-lockup-es.svg?v=7be64ca7" alt="NHG Law Group, Abogados de Empleo y Lesiones"><img class="lock lock-ivory lock-wide" src="img/brand/nhg-lockup-es-ivory.svg?v=7e7ed68d" alt="NHG Law Group, Abogados de Empleo y Lesiones"><img class="lock lock-ink lock-mark" src="img/brand/nhg-mark.svg?v=f4551314" alt="NHG Law Group"><img class="lock lock-ivory lock-mark" src="img/brand/nhg-mark-ivory.svg?v=94711083" alt="NHG Law Group"></a>
@@ -276,7 +283,7 @@ html.past-hero .reach-tab, html.no-hero .reach-tab{transform:translate(0,-50%)} 
   <div class="acts">
     <div class="pill" role="group" aria-label="Language"><button class="on" aria-pressed="true" lang="en"><span>EN</span></button><button aria-pressed="false" lang="es"><span>ES</span></button></div>
     <a class="call" href="tel:+15162285100">516-228-5100</a>
-    <a class="btn ghost sm" href="contact.html#intake-es">Revisión gratis de su caso</a>
+    <a class="btn ghost sm open-reach" href="contact.html#intake-es" aria-haspopup="dialog" aria-controls="reach" aria-expanded="false">Revisión gratis de su caso</a>
     <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="sheet"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </div>
 </div></header><a class="skip" href="#main-es">Ir al contenido</a><main id="main-es"><section class="pagehero"><div class="wrap grid" style="align-items:center">
@@ -301,16 +308,15 @@ html.past-hero .reach-tab, html.no-hero .reach-tab{transform:translate(0,-50%)} 
   <div style="grid-column:span 5"><img src="img/brand/nhg-lockup-lawgroup-ivory.svg?v=a79c15fb" alt="NHG Law Group" style="height:36px;width:auto"><div style="font-size:14px;color:rgba(255,255,255,.6);margin-top:8px">The NHG Law Group, P.C.</div><div style="margin-top:20px;color:rgba(255,255,255,.85)">4242 Merrick Road<br>Massapequa, New York 11758</div><div style="margin-top:14px;display:flex;gap:18px;flex-wrap:wrap;font-weight:600"><a href="tel:+15162285100">516-228-5100</a><a href="sms:+15163622613">Texto: 516-362-2613</a><a href="https://www.google.com/maps/search/?api=1&amp;query=4242+Merrick+Road+Massapequa+NY+11758" target="_blank" rel="noopener">Cómo llegar</a></div><div class="slot" style="margin-top:14px;max-width:360px">Horario: la firma debe indicarlo. Línea de texto: se muestra cuando se confirme</div></div>
   <div class="links" style="grid-column:span 2"><a href="injury.html">Lesiones</a><a href="employment.html">Trabajo</a><a href="results.html">Resultados</a><a href="reviews.html">Opiniones</a><a href="attorneys.html">Abogados</a><a href="contact.html">Contacto</a></div>
   <div class="links" style="grid-column:span 2"><a href="contact.html#intake-es">Enviar mensaje</a><a href="accessibility.html">Declaración de accesibilidad</a><a href="privacy.html">Privacidad</a><div lang="es" style="margin-top:10px;font-weight:600">También atendemos en inglés</div></div>
-  <div style="grid-column:span 3;display:flex;flex-direction:column;gap:10px"><div class="slot">Redes sociales: solo las cuentas que la firma confirme antes del lanzamiento</div><div class="slot">Espacio para la etiqueta de publicidad: contenido según revisión de los abogados</div><div style="font-size:13px;color:rgba(255,255,255,.55);margin-top:8px">© 2026 The NHG Law Group, P.C.</div><div class="draftline">Borrador para revisión de la firma. Textos, resultados y opiniones sujetos a aprobación. <span class="built">Updated Sep 16, 2026, 2:16 PM ET</span></div></div>
+  <div style="grid-column:span 3;display:flex;flex-direction:column;gap:10px"><div class="slot">Redes sociales: solo las cuentas que la firma confirme antes del lanzamiento</div><div class="slot">Espacio para la etiqueta de publicidad: contenido según revisión de los abogados</div><div style="font-size:13px;color:rgba(255,255,255,.55);margin-top:8px">© 2026 The NHG Law Group, P.C.</div><div class="draftline">Borrador para revisión de la firma. Textos, resultados y opiniones sujetos a aprobación. <span class="built">Updated Sep 16, 2026, 5:46 PM ET</span></div></div>
 </div></footer></div>
 <div id="sheet" role="dialog" aria-modal="true" aria-label="Menu"><div class="topbar"><img class="sheet-lock sheet-en" src="img/brand/nhg-lockup-en-ivory.svg?v=e701eb86" alt="NHG Law Group, Employment and Injury Lawyers" style="height:32px;width:auto"><img class="sheet-lock sheet-es" src="img/brand/nhg-lockup-es-ivory.svg?v=7e7ed68d" alt="NHG Law Group, Abogados de Empleo y Lesiones" style="height:32px;width:auto"><button class="close" aria-label="Close"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><nav></nav><div class="acts"></div></div>
-<button class="reach-tab" aria-haspopup="dialog" aria-expanded="false" aria-controls="reach">Contact us</button>
 <div id="reach" class="dlg" role="dialog" aria-modal="true" aria-labelledby="reach-t"><div class="reach-card"><button class="close" aria-label="Close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button><div class="eyebrow" data-l="reach-eyebrow">Free case review</div><h2 id="reach-t" data-l="reach-title">Reach us the way you prefer</h2><p data-l="reach-lead">Call, text, or send a message. Someone from this office replies, in English or Spanish.</p>
 <a class="btn act" href="tel:+15162285100"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span><b data-l="reach-call">Call</b><small>516-228-5100</small></span></a>
 <a class="btn ghost" href="sms:+15163622613"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg><span><b data-l="reach-text">Text</b><small>516-362-2613</small></span></a>
 <a class="btn ghost reach-msg" href="contact.html#intake"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M4 5h16v11H9l-5 4z"/></svg><span><b data-l="reach-msg">Send a message</b><small data-l="reach-msg-sub">We reply during business hours</small></span></a>
 <div class="slot" style="margin-top:14px">Reply-time wording per the firm; the panel stays in-house, no third-party chat script, no bot</div></div></div>
 <div class="tag">Design concept · draft copy, not final</div>
-<script src="site.js?v=99277dfa"></script>
+<script src="site.js?v=0f175400"></script>
 </body>
 </html>

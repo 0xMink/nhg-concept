@@ -11,6 +11,9 @@
 
 (function(){
   var root=document.documentElement;
+  if(document.querySelector('header.top.solid')) root.classList.add('solid-hdr');
+  function pin(){ var on=window.innerWidth>=900 && window.scrollY>96 && (root.classList.contains('past-hero')||root.classList.contains('no-hero')); root.classList.toggle('pinned',on); }
+  window.addEventListener('scroll',pin,{passive:true}); window.addEventListener('resize',pin); new MutationObserver(pin).observe(root,{attributes:true,attributeFilter:['class']});
   var NAV={en:[["Injury","injury.html"],["Employment","employment.html"],["Results","results.html"],["Reviews","reviews.html"],["Attorneys","attorneys.html"],["Contact","contact.html"]],
            es:[["Lesiones","injury.html"],["Trabajo","employment.html"],["Resultados","results.html"],["Opiniones","reviews.html"],["Abogados","attorneys.html"],["Contacto","contact.html"]]};
   var ACT={en:["Call 516-228-5100","Text 516-362-2613"],es:["Llame al 516-228-5100","Texto al 516-362-2613"]};
@@ -33,7 +36,6 @@
     var L={en:{menu:'Menu',close:'Close',lang:'Language',skip:'Skip to content',tab:'Contact us','reach-eyebrow':'Free case review','reach-title':'Reach us the way you prefer','reach-lead':'Call, text, or send a message. Someone from this office replies, in English or Spanish.','reach-call':'Call','reach-text':'Text','reach-msg':'Send a message','reach-msg-sub':'We reply during business hours'},
            es:{menu:'Menú',close:'Cerrar',lang:'Idioma',skip:'Ir al contenido',tab:'Contáctenos','reach-eyebrow':'Revisión gratis de su caso','reach-title':'Comuníquese como prefiera','reach-lead':'Llame, envíe un texto o un mensaje. Alguien de esta oficina le responde, en español o en inglés.','reach-call':'Llamar','reach-text':'Texto','reach-msg':'Enviar un mensaje','reach-msg-sub':'Respondemos en horario de oficina'}}[l];
     document.querySelectorAll('[data-l]').forEach(function(e){ if(L[e.getAttribute('data-l')]) e.textContent=L[e.getAttribute('data-l')]; });
-    var rt=document.querySelector('.reach-tab'); if(rt) rt.textContent=L.tab;
     var rc=document.querySelector('#reach .close'); if(rc) rc.setAttribute('aria-label',L.close);
     var rm=document.querySelector('#reach .reach-msg'); if(rm){ var local=document.querySelector('#page-'+l+' #intake'+(l==='es'?'-es':'')); rm.href=local?('#intake'+(l==='es'?'-es':'')):('contact.html#intake'+(l==='es'?'-es':'')); }
     document.querySelectorAll('.menu-btn').forEach(function(b){ b.setAttribute('aria-label',L.menu); });
@@ -52,7 +54,7 @@
   function openDialog(){ return document.querySelector('#sheet.open, .dlg.open'); }
   document.addEventListener('keydown',function(e){ var sh=openDialog(); if(e.key!=='Tab'||!sh) return; var f=sh.querySelectorAll('button, a[href]'); if(!f.length) return; var first=f[0], last=f[f.length-1]; if(e.shiftKey&&document.activeElement===first){ e.preventDefault(); last.focus(); } else if(!e.shiftKey&&document.activeElement===last){ e.preventDefault(); first.focus(); } });
   document.addEventListener('keydown',function(e){ var sh=openDialog(); if(e.key==='Escape' && sh) closeDlg(sh.id); });
-  document.addEventListener('click',function(e){ var t=e.target.closest('.reach-tab'); if(t){ openDlg('reach',t); return; } var c=e.target.closest('#reach .close'); if(c){ closeDlg('reach'); return; } if(e.target.id==='reach'){ closeDlg('reach'); return; } var a=e.target.closest('#reach a[href^="#"]'); if(a){ closeDlg('reach'); } });
+  document.addEventListener('click',function(e){ var t=e.target.closest('.open-reach'); if(t){ e.preventDefault(); openDlg('reach',t); return; } var c=e.target.closest('#reach .close'); if(c){ closeDlg('reach'); return; } if(e.target.id==='reach'){ closeDlg('reach'); return; } var a=e.target.closest('#reach a[href^="#"]'); if(a){ closeDlg('reach'); } });
   // results: show the first 10 rows, the rest behind "Show all"
   document.querySelectorAll('[id^=allrows]').forEach(function(a){ if(!document.querySelector('[id^=showall]')) return; a.querySelectorAll('.row').forEach(function(r,i){ if(i>=10) r.classList.add('hid'); }); });
   document.addEventListener('click',function(e){
