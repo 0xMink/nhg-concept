@@ -58,6 +58,10 @@
   // results: show the first 10 rows, the rest behind "Show all"
   document.querySelectorAll('[id^=allrows]').forEach(function(a){ if(!document.querySelector('[id^=showall]')) return; a.querySelectorAll('.row').forEach(function(r,i){ if(i>=10) r.classList.add('hid'); }); });
   document.addEventListener('click',function(e){
+    var pk=e.target.closest('.chips.pick button'); if(pk){ e.preventDefault(); var grp=pk.parentElement, single=grp.classList.contains('one');
+      if(single){ grp.querySelectorAll('button').forEach(function(b){ var on=b===pk; b.classList.toggle('on',on); b.setAttribute('aria-pressed',on?'true':'false'); }); }
+      else { var on=!pk.classList.contains('on'); pk.classList.toggle('on',on); pk.setAttribute('aria-pressed',on?'true':'false'); }
+      return; }
     var fp=e.target.closest('.formpill button'); if(fp){ e.preventDefault(); fp.parentElement.querySelectorAll('button').forEach(function(b){ var on=b===fp; b.classList.toggle('on',on); b.setAttribute('aria-pressed',on?'true':'false'); b.style.background=on?'var(--ink)':'transparent'; b.style.color=on?'var(--paper)':'var(--ink)'; }); return; }
     var s=e.target.closest('.pill button, .pill span');
     if(s){ var t=s.textContent.trim(); if(t==='EN'||t==='ES'){ e.preventDefault(); setLang(t.toLowerCase()); } return; }
