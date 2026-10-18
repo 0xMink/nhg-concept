@@ -11,6 +11,8 @@
 
 (function(){
   var root=document.documentElement;
+  // ?notes=1 shows every review note and slot; ?notes=0 returns to the clean view. Remembered for the tab.
+  try{ var nq=location.search.match(/[?&]notes=([01])/); if(nq) sessionStorage.setItem('nhg-notes',nq[1]); if(sessionStorage.getItem('nhg-notes')==='1') root.classList.remove('viewing'); }catch(e){}
   if(document.querySelector('header.top.solid')) root.classList.add('solid-hdr');
   function pin(){ var on=window.innerWidth>=900 && window.scrollY>96 && (root.classList.contains('past-hero')||root.classList.contains('no-hero')); root.classList.toggle('pinned',on); }
   window.addEventListener('scroll',pin,{passive:true}); window.addEventListener('resize',pin); new MutationObserver(pin).observe(root,{attributes:true,attributeFilter:['class']});
