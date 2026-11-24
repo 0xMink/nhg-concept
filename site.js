@@ -120,3 +120,36 @@
   var fit=function(){ var z=Math.min(1,window.innerWidth/1440); document.querySelectorAll('.desk').forEach(function(d){d.style.zoom=z}); };
   fit(); window.addEventListener('resize',fit);
 })();
+
+/* "Could I have a case?" checklists: educational only; answers stay on this page, nothing is saved or sent */
+(function(){
+  function update(ck){
+    var qs=[].slice.call(ck.querySelectorAll('.ck-q')), out=ck.querySelector('.ck-out');
+    [].forEach.call(out.querySelectorAll('[data-msg],.ck-cta'),function(p){p.hidden=true;});
+    if(qs.some(function(q){return !q.dataset.ans;})) return;
+    var keys=qs.filter(function(q){return q.dataset.role==='key';}), any=qs.filter(function(q){return q.dataset.role==='any';});
+    var a=function(q){return q.dataset.ans;};
+    var r;
+    if(keys.some(function(q){return a(q)==='no';}) || (any.length && any.every(function(q){return a(q)==='no';}))) r='no';
+    else if(keys.every(function(q){return a(q)==='yes';}) && (!any.length || any.some(function(q){return a(q)==='yes';}))) r='yes';
+    else r='unsure';
+    out.querySelector('[data-msg="'+r+'"]').hidden=false;
+    var t=qs.filter(function(q){return q.dataset.role==='time';})[0], tn=out.querySelector('[data-msg="time"]');
+    if(t && tn && a(t)!=='yes') tn.hidden=false;
+    out.querySelector('.ck-cta').hidden=false;
+  }
+  document.addEventListener('click',function(e){
+    var b=e.target.closest&&e.target.closest('.ck-a button');
+    if(b){ var q=b.closest('.ck-q'); [].forEach.call(q.querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',x===b?'true':'false');}); q.dataset.ans=b.dataset.v; update(b.closest('.ck')); return; }
+    var r=e.target.closest&&e.target.closest('.ck-reset');
+    if(r){ var ck=r.closest('.ck'); [].forEach.call(ck.querySelectorAll('.ck-q'),function(q){delete q.dataset.ans;}); [].forEach.call(ck.querySelectorAll('.ck-a button'),function(x){x.setAttribute('aria-pressed','false');}); update(ck); }
+  });
+})();
+/* page title and description follow the language switch */
+(function(){
+  var root=document.documentElement, md=document.querySelector('meta[name="description"]');
+  function apply(){ var es=document.getElementById('page-es'), on=es && es.style.display!=='none';
+    if(root.dataset.titleEn) document.title = on ? root.dataset.titleEs : root.dataset.titleEn;
+    if(md && root.dataset.descEn) md.setAttribute('content', on ? root.dataset.descEs : root.dataset.descEn); }
+  apply(); new MutationObserver(apply).observe(document.body,{subtree:true,attributes:true,attributeFilter:['style']});
+})();
