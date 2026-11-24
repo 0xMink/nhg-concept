@@ -20,8 +20,7 @@
   if(document.querySelector('header.top.solid')) root.classList.add('solid-hdr');
   function pin(){ var on=window.innerWidth>=900 && window.scrollY>96 && (root.classList.contains('past-hero')||root.classList.contains('no-hero')); root.classList.toggle('pinned',on); }
   window.addEventListener('scroll',pin,{passive:true}); window.addEventListener('resize',pin); new MutationObserver(pin).observe(root,{attributes:true,attributeFilter:['class']});
-  var NAV={en:[["Injury","injury.html"],["Employment","employment.html"],["Results","results.html"],["Reviews","reviews.html"],["Attorneys","attorneys.html"],["Contact","contact.html"]],
-           es:[["Lesiones","injury.html"],["Trabajo","employment.html"],["Resultados","results.html"],["Opiniones","reviews.html"],["Abogados","attorneys.html"],["Contacto","contact.html"]]};
+  var NAV={"en": [["Injury", "injury.html"], ["Employment", "employment.html"], ["Abuse", "abuse.html"], ["Results", "results.html"], ["Attorneys", "attorneys.html"], ["Contact", "contact.html"]], "es": [["Lesiones", "injury.html"], ["Empleo", "employment.html"], ["Abuso", "abuse.html"], ["Resultados", "results.html"], ["Abogados", "attorneys.html"], ["Contacto", "contact.html"]]};
   var ACT={en:["Call 516-228-5100","Text 516-362-2613"],es:["Llame al 516-228-5100","Texto al 516-362-2613"]};
   function show(l){
     ['page','desk','mob'].forEach(function(k){
