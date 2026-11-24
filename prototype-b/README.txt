@@ -5,7 +5,7 @@ HOW TO OPEN: Extract the entire ZIP to a folder. Open nhg_legal_pages/index.html
 42 HTML pages: all 40 pages from NHG_Prototype_With_Media_Logos.zip, plus Meet the Staff and Ariel Estevez Perez's attorney profile.
 
 UPDATES
-- Staff directory: Rosa Collins (Senior Litigation Paralegal), Catalina Roman (Paralegal & Marketing Manager), Claudia Rodriguez (Events Coordinator), Barbara Franzone (Office Administrator).
+- Staff directory: Rosa Coscia (Senior Litigation Paralegal), Catalina Roman (Paralegal & Marketing Manager), Claudia Rodriguez (Events Coordinator), Barbara Franzone (Office Administrator).
 - Rosa's latest supplied headshot; gray-background portrait previews for Catalina, Claudia and Victoria from the earlier image edits. Confirm likeness and final photo approval before launch. Barbara's photo is a placeholder.
 - Four attorneys: Justin M. Reilly, Keith E. Williams, Victoria Spagnolo and Ariel Estevez Perez. Ariel's biography and photograph are placeholders. Neil Greenberg is not profiled.
 - Homepage As Seen In strip and archived news page preserved. Publication wordmarks are preview graphics, not verified official logo files. Verify permissions and publication branding before launch.
