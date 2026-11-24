@@ -11,6 +11,8 @@
 
 (function(){
   var root=document.documentElement;
+  // ?name=full previews the full legal name as the header wordmark; ?name=lockup returns
+  try{ var wq=location.search.match(/[?&]name=(full|lockup)/); if(wq) sessionStorage.setItem('nhg-name',wq[1]); if(sessionStorage.getItem('nhg-name')==='full') document.documentElement.classList.add('fullname'); }catch(e){}
   // ?palette=gold previews the navy-and-gold colours side by side with the current ones; remembered for the tab
   try{ var pq=location.search.match(/[?&]palette=(gold|current)/); if(pq) sessionStorage.setItem('nhg-palette',pq[1]); if(sessionStorage.getItem('nhg-palette')==='gold') document.documentElement.classList.add('gold'); }catch(e){}
   // ?notes=1 shows every review note and slot; ?notes=0 returns to the clean view. Remembered for the tab.
