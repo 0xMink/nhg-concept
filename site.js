@@ -11,6 +11,8 @@
 
 (function(){
   var root=document.documentElement;
+  // ?palette=gold previews the navy-and-gold colours side by side with the current ones; remembered for the tab
+  try{ var pq=location.search.match(/[?&]palette=(gold|current)/); if(pq) sessionStorage.setItem('nhg-palette',pq[1]); if(sessionStorage.getItem('nhg-palette')==='gold') document.documentElement.classList.add('gold'); }catch(e){}
   // ?notes=1 shows every review note and slot; ?notes=0 returns to the clean view. Remembered for the tab.
   try{ var nq=location.search.match(/[?&]notes=([01])/); if(nq) sessionStorage.setItem('nhg-notes',nq[1]); if(sessionStorage.getItem('nhg-notes')==='1') root.classList.remove('viewing'); }catch(e){}
   if(document.querySelector('header.top.solid')) root.classList.add('solid-hdr');

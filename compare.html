@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Colour comparison</title>
+<style>
+:root{--ink:#102442;--slate:#4A5163;--line:#DDD8CC;--cream:#F5F1E8}
+*{box-sizing:border-box} body{margin:0;background:#fff;color:var(--ink);font:18px/1.55 "Source Sans 3","Segoe UI",Arial,sans-serif}
+.wrap{max-width:1320px;margin:0 auto;padding:48px 40px} @media (max-width:700px){.wrap{padding:32px 16px}}
+h1{font:500 clamp(34px,4vw,52px)/1.1 "Source Serif 4",Georgia,serif;margin:0 0 12px} h2{font:500 26px/1.2 "Source Serif 4",Georgia,serif;margin:56px 0 16px}
+p{max-width:70ch;margin:0 0 12px;color:var(--slate)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:24px} .pair.phones{grid-template-columns:repeat(2,minmax(0,320px))} @media (max-width:700px){.pair,.pair.phones{grid-template-columns:1fr}}
+figure{margin:0} figure img{display:block;width:100%;height:auto;border:1px solid var(--line)} figcaption{font-weight:600;margin:0 0 8px}
+.sw{display:inline-block;width:18px;height:18px;border-radius:3px;vertical-align:-3px;margin-right:6px;border:1px solid rgba(0,0,0,.1)}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0 8px} .links a{display:inline-block;padding:12px 18px;border:1px solid var(--ink);color:var(--ink);text-decoration:none;font-weight:600} .links a.gold{background:#C9A45C;border-color:#C9A45C}
+.note{background:var(--cream);padding:16px 20px;margin-top:40px;font-size:16px;color:var(--slate)}
+</style></head><body><main class="wrap">
+<h1>Current colours or navy and gold?</h1>
+<p>The same pages in both colour schemes. Everything else, the layout, type and wording, is identical. Navy and gold comes from the homepage mockups made in ChatGPT; the current scheme is navy, cream and a burnt-orange accent.</p>
+<p><span class="sw" style="background:#102442"></span>Navy stays in both. <span class="sw" style="background:#B84A22"></span>Current accent &nbsp; <span class="sw" style="background:#C9A45C"></span>Gold accent (with navy text, so it stays readable)</p>
+<div class="links"><a href="index.html?palette=current">Browse the site in the current colours</a><a class="gold" href="index.html?palette=gold">Browse the site in navy and gold</a></div>
+<p style="font-size:16px">Either link keeps that colour scheme on every page you open in that tab.</p>
+<h2>Homepage</h2>
+<div class="pair"><figure><figcaption>Current</figcaption><img src="img/compare/home-d-current.jpg" alt="Homepage in the current colours" loading="lazy"></figure><figure><figcaption>Navy and gold</figcaption><img src="img/compare/home-d-gold.jpg" alt="Homepage in navy and gold" loading="lazy"></figure></div>
+<h2>On a phone</h2>
+<div class="pair phones"><figure><figcaption>Current</figcaption><img src="img/compare/home-m-current.jpg" alt="Phone homepage in the current colours" loading="lazy"></figure><figure><figcaption>Navy and gold</figcaption><img src="img/compare/home-m-gold.jpg" alt="Phone homepage in navy and gold" loading="lazy"></figure></div>
+<h2>Sexual and physical abuse page</h2>
+<div class="pair"><figure><figcaption>Current</figcaption><img src="img/compare/abuse-d-current.jpg" alt="Abuse page in the current colours" loading="lazy"></figure><figure><figcaption>Navy and gold</figcaption><img src="img/compare/abuse-d-gold.jpg" alt="Abuse page in navy and gold" loading="lazy"></figure></div>
+<h2>Contact form</h2>
+<div class="pair"><figure><figcaption>Current</figcaption><img src="img/compare/contact-d-current.jpg" alt="Contact form in the current colours" loading="lazy"></figure><figure><figcaption>Navy and gold</figcaption><img src="img/compare/contact-d-gold.jpg" alt="Contact form in navy and gold" loading="lazy"></figure></div>
+<div class="note">Both versions meet accessibility contrast standards. The firm's logo and brand package were designed with the current colours; switching to gold would mean updating those too.</div>
+</main></body></html>
