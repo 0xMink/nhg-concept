@@ -145,6 +145,10 @@
     if(r){ var ck=r.closest('.ck'); [].forEach.call(ck.querySelectorAll('.ck-q'),function(q){delete q.dataset.ans;}); [].forEach.call(ck.querySelectorAll('.ck-a button'),function(x){x.setAttribute('aria-pressed','false');}); update(ck); }
   });
 })();
+/* language switch keeps keyboard focus on the matching button in the language now shown */
+document.addEventListener('click',function(e){ var b=e.target.closest&&e.target.closest('.pill button'); if(!b) return; var l=b.getAttribute('lang'); setTimeout(function(){ var t=[].slice.call(document.querySelectorAll('.pill button[lang="'+l+'"]')).filter(function(x){return x.offsetParent;})[0]; if(t) t.focus(); },60); });
+/* press strip: pause and resume */
+document.addEventListener('click',function(e){ var b=e.target.closest&&e.target.closest('.presspause'); if(!b) return; var on=b.getAttribute('aria-pressed')!=='true'; [].forEach.call(document.querySelectorAll('.presspause'),function(x){ x.setAttribute('aria-pressed',on?'true':'false'); x.textContent=on?(x.dataset.play||'Play'):(x.dataset.pause||'Pause'); }); [].forEach.call(document.querySelectorAll('.press'),function(p){ p.classList.toggle('paused',on); }); });
 /* page title and description follow the language switch */
 (function(){
   var root=document.documentElement, md=document.querySelector('meta[name="description"]');
@@ -153,3 +157,9 @@
     if(md && root.dataset.descEn) md.setAttribute('content', on ? root.dataset.descEs : root.dataset.descEn); }
   apply(); new MutationObserver(apply).observe(document.body,{subtree:true,attributes:true,attributeFilter:['style']});
 })();
+
+/* keep a keyboard-focused element clear of the fixed header and the phone contact bar (WCAG 2.4.11) */
+document.addEventListener('focusin',function(e){ var a=e.target; if(!a||!a.getBoundingClientRect) return; var r=a.getBoundingClientRect(), bar=document.querySelector('.sticky'), hd=document.querySelector('html.pinned header.top');
+  var bottom=innerHeight; if(bar && getComputedStyle(bar).display!=='none' && !bar.contains(a)) bottom=bar.getBoundingClientRect().top;
+  var top=hd? hd.getBoundingClientRect().bottom : 0; if(hd && hd.contains(a)) top=0;
+  if(r.bottom>bottom-8 && r.top<innerHeight) window.scrollBy({top:r.bottom-bottom+24,behavior:'instant'}); else if(r.top<top+8) window.scrollBy({top:r.top-top-24,behavior:'instant'}); });
